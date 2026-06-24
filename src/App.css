@@ -198,6 +198,12 @@ nav {
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
+  width: 100%;
+  background: transparent;
+  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+.nav-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -205,9 +211,6 @@ nav {
   padding: 14px 24px;
   max-width: 1200px;
   margin: 0 auto;
-  background: transparent;
-  transition: background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
-  border-bottom: 1px solid transparent;
 }
 nav.scrolled {
   background: var(--surface);

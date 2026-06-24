@@ -60,6 +60,7 @@ const AV = {
 function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }) {
   return (
     <nav aria-label="Navigasi utama">
+      <div className="nav-inner">
       <a className="nav-brand" href="#top">
         <img className="brand-logo" src={notiveLogo} width={34} height={34} alt="" aria-hidden="true" />
         <span className="nav-brand-name">Notive</span>
@@ -85,6 +86,7 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
       >
         {open ? <IconX size={20} /> : <IconMenu size={20} />}
       </button>
+      </div>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? 'open' : ''}`} role="dialog" aria-modal="true" aria-label="Menu navigasi">
         <a href="#kalkulator" onClick={() => setOpen(false)}>Kalkulator</a>
