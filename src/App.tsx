@@ -1,6 +1,8 @@
 import { useEffect, useState, type SVGProps } from 'react'
 import './App.css'
+import { Calculator } from './Calculator'
 import dashboardPreview from './assets/dashboard-preview.webp'
+import notiveLogo from './assets/notive-logo.png'
 
 /* ============================================================
    Icon set — Lucide-style, 1.75 stroke width, 24x24 grid.
@@ -59,10 +61,11 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
   return (
     <nav aria-label="Navigasi utama">
       <a className="nav-brand" href="#top">
-        <div className="nav-logo-mark" aria-hidden="true">N</div>
+        <img className="brand-logo" src={notiveLogo} width={34} height={34} alt="" aria-hidden="true" />
         <span className="nav-brand-name">Notive</span>
       </a>
       <ul className="nav-links" role="menubar">
+        <li role="none"><a role="menuitem" href="#kalkulator">Kalkulator</a></li>
         <li role="none"><a role="menuitem" href="#features">Fitur</a></li>
         <li role="none"><a role="menuitem" href="#how">Cara Kerja</a></li>
         <li role="none"><a role="menuitem" href="#notibot">Notibot AI</a></li>
@@ -84,6 +87,7 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
       </button>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? 'open' : ''}`} role="dialog" aria-modal="true" aria-label="Menu navigasi">
+        <a href="#kalkulator" onClick={() => setOpen(false)}>Kalkulator</a>
         <a href="#features" onClick={() => setOpen(false)}>Fitur</a>
         <a href="#how" onClick={() => setOpen(false)}>Cara Kerja</a>
         <a href="#notibot" onClick={() => setOpen(false)}>Notibot AI</a>
@@ -824,7 +828,7 @@ function Footer() {
       <div className="footer-main">
         <div className="footer-brand-col">
           <div className="footer-brand-row">
-            <div className="footer-logo-mark">N</div>
+            <img className="brand-logo brand-logo-footer" src={notiveLogo} width={32} height={32} alt="" aria-hidden="true" />
             <span className="footer-brand-name">Notive</span>
           </div>
           <p className="footer-brand-desc">
@@ -839,6 +843,7 @@ function Footer() {
         <div className="footer-cols">
           <div className="footer-col">
             <div className="footer-col-title">Produk</div>
+            <a href="#kalkulator">Kalkulator</a>
             <a href="#features">Fitur</a>
             <a href="#how">Cara Kerja</a>
             <a href="#notibot">Notibot AI</a>
@@ -941,6 +946,7 @@ function App() {
       <main>
         <Hero />
         <TrustBar />
+        <Calculator />
         <Features />
         <Notibot />
         <Stats />
