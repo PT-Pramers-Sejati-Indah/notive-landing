@@ -143,13 +143,13 @@ function Hero() {
               <span className="shot-dot" />
               <span className="shot-dot" />
               <span className="shot-dot" />
-              <span className="shot-url">app.notive.id/activities</span>
+              <span className="shot-url">dashboard.notive.id</span>
             </div>
             <img
               className="shot-img"
               src={dashboardPreview}
-              width={1024}
-              height={485}
+              width={1280}
+              height={800}
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -855,56 +855,54 @@ function Testimonials() {
 function Pricing() {
   const plans: {
     name: string; desc: string; price: string; currency?: string; period?: string;
-    features: string[]; cta: string; featured?: boolean;
+    features: string[]; cta: string; featured?: boolean; href?: string;
   }[] = [
     {
-      name: 'Pemula',
-      desc: 'Untuk notaris perorangan yang baru memulai digitalisasi.',
+      name: 'Basic',
+      desc: 'Untuk notaris perorangan yang ingin mulai rapi tanpa ribet.',
       currency: 'Rp',
-      price: '299K',
+      price: '125K',
       period: '/ bulan',
       features: [
-        'Hingga 100 order per bulan',
-        '2 PIC internal',
-        'Filter & pencarian dasar',
-        'Berkas di Google Drive kantor',
+        'Hingga 100 order',
+        '5 PIC internal',
+        'Auto Drive Organizer',
+        'Nora via WhatsApp · 300 pertanyaan/bulan',
         'Dukungan via email',
       ],
       cta: 'Mulai uji coba 14 hari',
     },
     {
-      name: 'Profesional',
-      desc: 'Untuk kantor notaris aktif dengan tim 3 sampai 10 orang.',
+      name: 'Pro',
+      desc: 'Untuk kantor notaris aktif yang butuh kapasitas penuh.',
       currency: 'Rp',
-      price: '999K',
+      price: '499K',
       period: '/ bulan',
       features: [
         'Order tidak terbatas',
         'PIC tidak terbatas',
-        'Berkas di Google Drive kantor',
-        'Laporan bisnis',
-        'Isi formulir otomatis dari PDF',
-        'Impor dari spreadsheet (CSV)',
-        'Nora, asisten pribadi · 1.000 pertanyaan/bulan',
-        'Dukungan WhatsApp prioritas',
+        'Auto Drive Organizer',
+        'Nora lebih pintar',
+        'Nora tidak terbatas',
+        'Laporan bisnis & analitik',
+        'Dukungan prioritas',
       ],
       cta: 'Mulai uji coba 14 hari',
       featured: true,
     },
     {
       name: 'Firma',
-      desc: 'Untuk firma hukum dan jaringan kantor multi-cabang.',
-      price: 'Hubungi kami',
+      desc: 'Paket disesuaikan dengan kebutuhan firma atau jaringan kantor Anda.',
+      price: 'Sesuai kebutuhan',
       features: [
-        'Multi-kantor (aman antar cabang)',
-        'Jaminan layanan 99,9%',
-        'Bantuan khusus WhatsApp & desktop',
-        'Batas pertanyaan Nora yang lebih besar',
-        'Manajer akun dedikasi',
+        'Semua kemampuan Pro',
+        'Konfigurasi sesuai kebutuhan kantor',
+        'Fitur tambahan sesuai permintaan',
         'Onboarding & pelatihan tim',
-        'Prioritas fitur baru',
+        'Manajer akun dedikasi',
+        'Dukungan prioritas penuh',
       ],
-      cta: 'Jadwalkan demo',
+      cta: 'Hubungi kami',
     },
   ]
 
@@ -933,7 +931,7 @@ function Pricing() {
               <ul className="plan-feature-list">
                 {p.features.map((f) => <li key={f}><IconCheck size={15} /> {f}</li>)}
               </ul>
-              <a href="https://dashboard.notive.id/register" className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}>{p.cta}</a>
+              <a href={p.href ?? 'https://dashboard.notive.id/register'} className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}>{p.cta}</a>
             </div>
           ))}
         </div>
