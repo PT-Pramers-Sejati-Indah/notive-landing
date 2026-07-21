@@ -25,12 +25,9 @@ const IconArrowRight = (p: IconProps) => <svg {...I(p)}><path d="M5 12h14M13 5l7
 const IconPlay = (p: IconProps) => <svg {...I(p)}><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" /></svg>
 const IconShield = (p: IconProps) => <svg {...I(p)}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
 const IconTrending = (p: IconProps) => <svg {...I(p)}><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
-const IconSearch = (p: IconProps) => <svg {...I(p)}><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
 const IconFile = (p: IconProps) => <svg {...I(p)}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
 const IconFileText = (p: IconProps) => <svg {...I(p)}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>
 const IconUsers = (p: IconProps) => <svg {...I(p)}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
-const IconFilter = (p: IconProps) => <svg {...I(p)}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></svg>
-const IconUpload = (p: IconProps) => <svg {...I(p)}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line x1="12" y1="3" x2="12" y2="15" /></svg>
 const IconSparkles = (p: IconProps) => <svg {...I(p)}><path d="M12 3 13.5 9 19.5 10.5 13.5 12 12 18 10.5 12 4.5 10.5 10.5 9 12 3z" /><path d="M19 17l.7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7z" /><path d="M5 4l.5 1.5L7 6l-1.5.5L5 8l-.5-1.5L3 6l1.5-.5z" /></svg>
 const IconScan = (p: IconProps) => <svg {...I(p)}><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /><line x1="7" y1="12" x2="17" y2="12" /></svg>
 const IconLock = (p: IconProps) => <svg {...I(p)}><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
@@ -41,9 +38,15 @@ const IconX = (p: IconProps) => <svg {...I(p)}><line x1="18" y1="6" x2="6" y2="1
 const IconScale = (p: IconProps) => <svg {...I(p)}><path d="M16 16h6l-3-7-3 7zM2 16h6l-3-7-3 7z" /><path d="M7 16a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3" /><path d="M12 3v17" /><path d="M8 21h8" /></svg>
 const IconBuilding = (p: IconProps) => <svg {...I(p)}><rect x="4" y="2" width="16" height="20" rx="1" /><path d="M9 22v-4h6v4" /><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" /></svg>
 const IconBadgeCheck = (p: IconProps) => <svg {...I(p)}><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76z" /><path d="m9 12 2 2 4-4" /></svg>
-const IconDatabase = (p: IconProps) => <svg {...I(p)}><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" /><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" /></svg>
-const IconArrowUpRight = (p: IconProps) => <svg {...I(p)}><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg>
-const IconBolt = (p: IconProps) => <svg {...I(p)}><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+const IconFolder = (p: IconProps) => <svg {...I(p)}><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" /></svg>
+const IconChart = (p: IconProps) => <svg {...I(p)}><path d="M18 20V10M12 20V4M6 20v-6" /></svg>
+const IconExternal = (p: IconProps) => <svg {...I(p)}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+const IconPaperclip = (p: IconProps) => <svg {...I(p)}><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" /></svg>
+const IconImage = (p: IconProps) => <svg {...I(p)}><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg>
+const IconCalendar = (p: IconProps) => <svg {...I(p)}><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+const IconChevronLeft = (p: IconProps) => <svg {...I(p)}><polyline points="15 18 9 12 15 6" /></svg>
+const IconChevronRight = (p: IconProps) => <svg {...I(p)}><polyline points="9 18 15 12 9 6" /></svg>
+const IconSend = (p: IconProps) => <svg {...I(p)}><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
 
 /* Avatar tint palette — built from the brand blue plus a few cohesive hues. */
 const AV = {
@@ -66,16 +69,16 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
         <span className="nav-brand-name">Notive</span>
       </a>
       <ul className="nav-links" role="menubar">
-        <li role="none"><a role="menuitem" href="#kalkulator">Kalkulator</a></li>
+        <li role="none"><a role="menuitem" href="#nora">Nora</a></li>
         <li role="none"><a role="menuitem" href="#features">Fitur</a></li>
+        <li role="none"><a role="menuitem" href="#kalkulator">Kalkulator</a></li>
         <li role="none"><a role="menuitem" href="#how">Cara Kerja</a></li>
-        <li role="none"><a role="menuitem" href="#notibot">Notibot AI</a></li>
         <li role="none"><a role="menuitem" href="#pricing">Harga</a></li>
         <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
       </ul>
       <div className="nav-right">
         <a href="#login" className="btn-outline">Masuk</a>
-        <a href="#trial" className="btn-cta">Coba 14 hari gratis</a>
+        <a href="https://dashboard.notive.id/register" className="btn-cta">Coba 14 hari gratis</a>
       </div>
       <button
         className="nav-toggle"
@@ -89,15 +92,15 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
       </div>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? 'open' : ''}`} role="dialog" aria-modal="true" aria-label="Menu navigasi">
-        <a href="#kalkulator" onClick={() => setOpen(false)}>Kalkulator</a>
+        <a href="#nora" onClick={() => setOpen(false)}>Nora</a>
         <a href="#features" onClick={() => setOpen(false)}>Fitur</a>
+        <a href="#kalkulator" onClick={() => setOpen(false)}>Kalkulator</a>
         <a href="#how" onClick={() => setOpen(false)}>Cara Kerja</a>
-        <a href="#notibot" onClick={() => setOpen(false)}>Notibot AI</a>
         <a href="#pricing" onClick={() => setOpen(false)}>Harga</a>
         <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
         <div className="mobile-menu-actions">
           <a href="#login" className="btn-outline" onClick={() => setOpen(false)}>Masuk</a>
-          <a href="#trial" className="btn-cta" onClick={() => setOpen(false)}>Coba 14 hari gratis</a>
+          <a href="https://dashboard.notive.id/register" className="btn-cta" onClick={() => setOpen(false)}>Coba 14 hari gratis</a>
         </div>
       </div>
     </nav>
@@ -113,12 +116,12 @@ function Hero() {
             Kelola seluruh order kantor notaris <span className="hero-accent">dalam satu tempat</span>
           </h1>
           <p className="hero-sub reveal delay-1">
-            Dari pelacakan Jual Beli dan Hak Tanggungan hingga laporan PIC, Notive menggantikan
-            spreadsheet lama Anda dengan satu dashboard yang aman, cepat, dan dilengkapi asisten AI
-            berbahasa Indonesia.
+            Dari pelacakan Jual Beli dan Hak Tanggungan hingga berkas di Google Drive kantor Anda,
+            laporan bisnis, dan Nora, asisten pribadi yang siap membantu dalam Bahasa Indonesia.
+            Notive menggantikan spreadsheet lama tanpa pernah menyimpan dokumen Anda.
           </p>
           <div className="hero-actions reveal delay-2">
-            <a href="#trial" className="btn-hero-primary">
+            <a href="https://dashboard.notive.id/register" className="btn-hero-primary">
               Mulai uji coba gratis
               <IconArrowRight size={14} />
             </a>
@@ -129,8 +132,8 @@ function Hero() {
           </div>
           <ul className="hero-trust reveal delay-2">
             <li><IconShield size={15} /> Data terisolasi per kantor</li>
-            <li><IconBolt size={15} /> Siap pakai di bawah 5 menit</li>
-            <li><IconTrending size={15} /> Hemat 3 jam admin tiap hari</li>
+            <li><IconFolder size={15} /> Berkas tetap di Google Drive Anda</li>
+            <li><IconTrending size={15} /> Laporan beban kerja PIC</li>
           </ul>
         </div>
 
@@ -197,42 +200,42 @@ const FEATURES: Feature[] = [
   {
     id: 'orders',
     title: 'Manajemen order menyeluruh',
-    body: 'Buat, edit, dan lacak setiap order (Jual Beli, Hak Tanggungan, Hibah, dan lainnya) dengan timeline progress, lampiran tautan dokumen, dan riwayat lengkap.',
+    body: 'Buat, edit, dan lacak setiap order (Jual Beli, Hak Tanggungan, Hibah, dan lainnya) dengan catatan progress, pencarian mudah, serta status Aktif atau Lunas.',
     icon: <IconFileText size={16} />,
     preview: <PreviewOrders />,
   },
   {
+    id: 'drive',
+    title: 'Berkas di Google Drive kantor Anda',
+    body: 'Hubungkan Google Drive kantor. Notive membuat folder per order otomatis. Dokumen tetap milik Anda; Notive tidak menyimpan atau menguasai berkas.',
+    icon: <IconFolder size={16} />,
+    preview: <PreviewDrive />,
+  },
+  {
     id: 'pic',
-    title: 'Tim internal & PIC',
-    body: 'Tambahkan staf sebagai PIC kantor. Setiap order punya penanggung jawab yang jelas, terisolasi per kantor dengan validasi multi-tenant.',
+    title: 'Tim Notaris & PIC Internal',
+    body: 'Owner terdaftar sebagai Notaris. Tambah staf sebagai PIC Internal. Setiap order punya penanggung jawab yang jelas, dan data hanya terlihat di dalam kantor Anda.',
     icon: <IconUsers size={16} />,
     preview: <PreviewPic />,
   },
   {
-    id: 'filter',
-    title: 'Pencarian & filter cerdas',
-    body: 'Saring order berdasarkan PIC, tanggal transaksi, status pembayaran, dan jenis transaksi. Setiap filter tersimpan di URL sehingga bisa di-bookmark.',
-    icon: <IconFilter size={16} />,
-    preview: <PreviewFilter />,
+    id: 'analytics',
+    title: 'Laporan bisnis kantor',
+    body: 'Lihat berapa order masuk, yang aktif, yang sudah lunas, tren tiap bulan, dan beban kerja PIC. Pilih periode: bulan ini, bulan lalu, 6 bulan, atau tanggal sendiri.',
+    icon: <IconChart size={16} />,
+    preview: <PreviewAnalytics />,
   },
   {
     id: 'ocr',
-    title: 'Autofill dari PDF (AI OCR)',
-    body: 'Unggah PDF akta dan biarkan Gemini AI mengisi nama klien, nomor sertifikat, PIC Bank, dan timeline progress. Anda tinggal mengoreksi sebelum menyimpan.',
+    title: 'Isi formulir dari PDF',
+    body: 'Unggah PDF akta, lalu Notive mengisi nama klien, sertifikat, PIC Bank, transaksi, dan progress secara otomatis. Anda tinggal memeriksa sebelum menyimpan.',
     icon: <IconScan size={16} />,
     preview: <PreviewOcr />,
   },
   {
-    id: 'csv',
-    title: 'Impor CSV massal',
-    body: 'Pindahkan 100+ order sekaligus dari spreadsheet lama. Validasi per baris dengan laporan kesalahan terperinci, jadi Anda tidak perlu mulai dari nol.',
-    icon: <IconUpload size={16} />,
-    preview: <PreviewCsv />,
-  },
-  {
-    id: 'ai',
-    title: 'Notibot, asisten AI Bahasa Indonesia',
-    body: '"Siapa PIC yang belum menangani order bulan ini?" Cukup tanya. Notibot bersifat read-only, hanya melihat data kantor Anda, dengan kuota 1.000 prompt per bulan.',
+    id: 'nora',
+    title: 'Nora, asisten pribadi kantor',
+    body: 'Tanya Nora seperti berbicara dengan staf: siapa PIC yang sibuk, order mana yang belum lunas, atau berkas apa saja di folder Drive. Jawabannya dalam Bahasa Indonesia.',
     icon: <IconSparkles size={16} />,
     preview: <PreviewChat />,
   },
@@ -253,8 +256,8 @@ function Features() {
               Semua yang dibutuhkan kantor notaris
             </h2>
             <p className="section-body reveal delay-1 features-intro">
-              Notive dirancang dari nol untuk alur kerja notaris Indonesia, bukan adaptasi dari
-              perangkat generik buatan luar negeri.
+              Dirancang untuk alur kerja notaris Indonesia: order, PIC, berkas di Google Drive
+              kantor Anda, laporan bisnis, dan Nora. Bukan aplikasi rumit yang membingungkan.
             </p>
             <div className="features-list" role="tablist" aria-label="Daftar fitur">
               {FEATURES.map((f) => (
@@ -341,7 +344,7 @@ function PreviewOrders() {
 
 function PreviewPic() {
   const pics = [
-    { initials: 'AP', name: 'Amanda Putri', role: 'Admin · Notaris', count: 64, tint: AV.blue },
+    { initials: 'AP', name: 'Amanda Putri', role: 'Notaris', count: 64, tint: AV.blue },
     { initials: 'RS', name: 'Rina Sari', role: 'PIC Internal', count: 38, tint: AV.amber },
     { initials: 'AW', name: 'Andi Wijaya', role: 'PIC Internal', count: 27, tint: AV.green },
     { initials: 'DP', name: 'Dewi Pratiwi', role: 'PIC Internal', count: 23, tint: AV.cyan },
@@ -369,32 +372,74 @@ function PreviewPic() {
   )
 }
 
-function PreviewFilter() {
+function PreviewDrive() {
+  const files = [
+    { name: 'KTP-Budi-Santoso.pdf', size: '240 KB' },
+    { name: 'Sertifikat-HM-04827.pdf', size: '1,2 MB' },
+    { name: 'Surat-Bank-BCA.pdf', size: '380 KB' },
+    { name: 'Draft-AJB.docx', size: '96 KB' },
+  ]
   return (
     <>
       <div className="akta-header">
-        <div className="akta-title">Filter &amp; Pencarian</div>
-        <div className="akta-btn-ghost">Reset</div>
+        <div className="akta-title">Berkas di Google Drive</div>
+        <div className="akta-btn"><IconExternal size={11} /> Buka folder</div>
       </div>
-      <div className="filter-row">
-        <label className="filter-chip filter-chip-input">
-          <IconSearch size={11} />
-          <input defaultValue="PT Maju" readOnly aria-label="Cari order" />
-        </label>
+      <div className="drive-path">
+        <IconFolder size={14} />
+        <span>Notive - Kantor Amanda / O-0041 Budi Santoso</span>
       </div>
-      <div className="filter-row">
-        <span className="filter-chip"><span className="chip-key">PIC</span> Rina Sari <IconChevronDown size={10} /></span>
-        <span className="filter-chip"><span className="chip-key">Status</span> Aktif <IconChevronDown size={10} /></span>
+      {files.map((f) => (
+        <div className="drive-file" key={f.name}>
+          <div className="drive-file-icon"><IconFile size={14} /></div>
+          <div className="drive-file-meta">
+            <div className="drive-file-name">{f.name}</div>
+            <div className="drive-file-size">{f.size}</div>
+          </div>
+          <span className="drive-file-open">Buka</span>
+        </div>
+      ))}
+      <p className="drive-note">Berkas tersimpan di Google Drive kantor. Notive hanya menampilkan nama file.</p>
+    </>
+  )
+}
+
+function PreviewAnalytics() {
+  const tiles = [
+    { label: 'Total order', value: '48' },
+    { label: 'Aktif', value: '31' },
+    { label: 'Lunas', value: '22' },
+    { label: 'Non-aktif', value: '17' },
+  ]
+  const bars = [
+    { label: 'Jual Beli', pct: 72 },
+    { label: 'Hak Tanggungan', pct: 48 },
+    { label: 'Hibah', pct: 28 },
+    { label: 'Lainnya', pct: 18 },
+  ]
+  return (
+    <>
+      <div className="akta-header">
+        <div className="akta-title">Laporan bisnis</div>
+        <div className="akta-btn-ghost">Bulan ini</div>
       </div>
-      <div className="filter-row">
-        <span className="filter-chip"><span className="chip-key">Tanggal</span> 01/05 s/d 31/05 <IconChevronDown size={10} /></span>
-        <span className="filter-chip"><span className="chip-key">Pembayaran</span> Tagihan <IconChevronDown size={10} /></span>
+      <div className="analytics-tiles">
+        {tiles.map((t) => (
+          <div className="analytics-tile" key={t.label}>
+            <div className="analytics-tile-val">{t.value}</div>
+            <div className="analytics-tile-lbl">{t.label}</div>
+          </div>
+        ))}
       </div>
-      <div className="filter-count">Menampilkan <strong>12</strong> dari 24 order</div>
-      <div className="filter-url">
-        <span className="filter-url-label">URL</span>
-        <code>/activities?search=PT+Maju&amp;pic=rina&amp;status=active</code>
-      </div>
+      <div className="analytics-chart-label">Transaksi hukum</div>
+      {bars.map((b) => (
+        <div className="analytics-bar-row" key={b.label}>
+          <span className="analytics-bar-lbl">{b.label}</span>
+          <div className="analytics-bar-track">
+            <div className="analytics-bar-fill" style={{ width: `${b.pct}%` }} />
+          </div>
+        </div>
+      ))}
     </>
   )
 }
@@ -410,7 +455,7 @@ function PreviewOcr() {
         <div className="ocr-drop-icon"><IconFile size={18} /></div>
         <div>
           <div className="ocr-drop-name">akta-jualbeli-budisantoso.pdf</div>
-          <div className="ocr-drop-meta">412 KB · Dipindai dengan Gemini AI</div>
+          <div className="ocr-drop-meta">Diisi otomatis dari PDF · maks. 500 KB</div>
         </div>
         <div className="ocr-progress"><div className="ocr-progress-bar" /></div>
       </div>
@@ -423,67 +468,275 @@ function PreviewOcr() {
   )
 }
 
-function PreviewCsv() {
+function PreviewChat() {
   return (
     <>
-      <div className="akta-header">
-        <div className="akta-title">Impor CSV</div>
-        <div className="akta-btn"><IconUpload size={11} /> Unggah</div>
-      </div>
-      <div className="csv-summary">
-        <div className="csv-summary-row">
-          <span>Total diproses</span>
-          <strong>50</strong>
+      <div className="wa-mini">
+        <div className="wa-mini-header">
+          <span className="wa-avatar-wrap" aria-hidden="true">
+            <img className="wa-avatar" src={notiveLogo} width={26} height={26} alt="" />
+          </span>
+          <div>
+            <div className="wa-mini-name">Nora</div>
+            <div className="wa-mini-status">online</div>
+          </div>
         </div>
-        <div className="csv-summary-row csv-ok">
-          <span><IconCheck size={11} /> Berhasil</span>
-          <strong>48</strong>
+        <div className="wa-mini-body">
+          <div className="wa-bubble wa-in">Ada yang bisa Nora bantu?</div>
+          <div className="wa-bubble wa-out">File apa saja di order Budi Santoso?</div>
+          <div className="wa-bubble wa-in">
+            Ada 3 berkas di folder Drive:
+            <div className="wa-attach-list">
+              <span className="wa-attach"><IconFile size={12} /> KTP.pdf</span>
+              <span className="wa-attach"><IconImage size={12} /> foto-sertifikat.jpg</span>
+              <span className="wa-attach"><IconFile size={12} /> ringkasan.csv</span>
+            </div>
+          </div>
         </div>
-        <div className="csv-summary-row csv-err">
-          <span><IconX size={11} /> Gagal</span>
-          <strong>2</strong>
-        </div>
-      </div>
-      <div className="csv-err-row">
-        <div className="csv-err-meta">
-          <div className="csv-err-num">Baris 12</div>
-          <div className="csv-err-name">"PT Tidak Terduga"</div>
-        </div>
-        <div className="csv-err-msg">Nama sudah ada di kantor</div>
-      </div>
-      <div className="csv-err-row">
-        <div className="csv-err-meta">
-          <div className="csv-err-num">Baris 27</div>
-          <div className="csv-err-name">"Tanggal kosong"</div>
-        </div>
-        <div className="csv-err-msg">Format tanggal salah</div>
       </div>
     </>
   )
 }
 
-function PreviewChat() {
+function WaAttach({
+  name,
+  meta,
+  kind = 'file',
+}: {
+  name: string
+  meta: string
+  kind?: 'file' | 'image' | 'sheet'
+}) {
+  const icon =
+    kind === 'image' ? <IconImage size={18} /> :
+    kind === 'sheet' ? <IconFileText size={18} /> :
+    <IconFile size={18} />
   return (
-    <>
-      <div className="akta-header">
-        <div className="akta-title chat-title"><span className="chat-dot" /> Notibot · Online</div>
+    <div className="wa-file-card">
+      <div className={`wa-file-icon wa-file-${kind}`}>{icon}</div>
+      <div className="wa-file-meta">
+        <div className="wa-file-name">{name}</div>
+        <div className="wa-file-size">{meta}</div>
       </div>
-      <div className="chat-bubble user">
-        Siapa PIC yang belum menangani order bulan ini?
+    </div>
+  )
+}
+
+const NORA_SLIDES = [
+  {
+    id: 'docs',
+    caption: 'Minta dokumen order',
+    messages: (
+      <>
+        <div className="wa-bubble wa-out">
+          Berikan saya semua dokumen untuk order Budi Santoso
+        </div>
+        <div className="wa-bubble wa-in">
+          <p>Siap. Berikut semua berkas di folder order <strong>Budi Santoso</strong>:</p>
+          <div className="wa-attach-stack">
+            <WaAttach name="KTP-Budi-Santoso.pdf" meta="PDF · 240 KB" kind="file" />
+            <WaAttach name="foto-sertifikat.jpg" meta="JPG · 1,1 MB" kind="image" />
+            <WaAttach name="ringkasan-biaya.csv" meta="CSV · 48 KB" kind="sheet" />
+          </div>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: 'save',
+    caption: 'Simpan berkas ke Drive',
+    messages: (
+      <>
+        <div className="wa-bubble wa-out">
+          Tolong simpan berkas ini
+          <div className="wa-attach-stack">
+            <WaAttach name="Surat-Kuasa-Bank.pdf" meta="PDF · 312 KB" kind="file" />
+          </div>
+        </div>
+        <div className="wa-bubble wa-in">
+          <p>Sudah tersimpan di Google Drive kantor Anda.</p>
+          <p className="wa-path"><IconFolder size={12} /> Notive - Kantor Amanda / O-0041 Budi Santoso</p>
+          <p>Folder sudah terorganisir per order, jadi mudah dicari nanti.</p>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: 'convert',
+    caption: 'Ubah jadi PDF',
+    messages: (
+      <>
+        <div className="wa-bubble wa-out">
+          Tolong ubah berkas ini menjadi PDF
+          <div className="wa-attach-stack">
+            <WaAttach name="Draft-AJB.docx" meta="DOCX · 96 KB" kind="sheet" />
+          </div>
+        </div>
+        <div className="wa-bubble wa-in">
+          <p>Sudah. Berikut hasil konversinya:</p>
+          <div className="wa-attach-stack">
+            <WaAttach name="Draft-AJB.pdf" meta="PDF · 180 KB" kind="file" />
+          </div>
+          <p>Mau Nora simpan juga ke folder Drive order yang terkait?</p>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: 'orders',
+    caption: 'Cek order belum lunas',
+    messages: (
+      <>
+        <div className="wa-bubble wa-out">
+          Tampilkan order Jual Beli yang belum lunas di bulan ini
+        </div>
+        <div className="wa-bubble wa-in">
+          <p>Ada <strong>8 order Jual Beli</strong> dengan status Tagihan bulan ini:</p>
+          <table className="wa-table">
+            <thead><tr><th>Klien</th><th>PIC</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>PT Maju Bersama</td><td>Rina S.</td><td>Tagihan</td></tr>
+              <tr><td>Citra Lestari</td><td>Andi W.</td><td>Tagihan</td></tr>
+              <tr><td>PT Bumi Hijau</td><td>Rina S.</td><td>Tagihan</td></tr>
+            </tbody>
+          </table>
+          <p className="wa-hint">Ketik "lanjut" untuk melihat yang berikutnya.</p>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: 'reminder',
+    caption: 'Buat pengingat',
+    messages: (
+      <>
+        <div className="wa-bubble wa-out">
+          Buatkan reminder untuk order Budi Santoso: tanda tangan akta hari Jumat jam 10.00
+        </div>
+        <div className="wa-bubble wa-in">
+          <p>Sudah. Nora menyimpan pengingat di Google Calendar Anda.</p>
+          <div className="wa-cal-card">
+            <div className="wa-cal-icon"><IconCalendar size={16} /></div>
+            <div>
+              <div className="wa-cal-title">Tanda tangan akta · Budi Santoso</div>
+              <div className="wa-cal-when">Jumat, 10.00 · Google Calendar</div>
+            </div>
+          </div>
+          <p>Nora akan mengingatkan Anda menjelang waktunya.</p>
+        </div>
+      </>
+    ),
+  },
+] as const
+
+function Nora() {
+  const [slide, setSlide] = useState(0)
+  const total = NORA_SLIDES.length
+  const current = NORA_SLIDES[slide]
+
+  const go = (next: number) => {
+    setSlide(((next % total) + total) % total)
+  }
+
+  useEffect(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) return
+    const id = window.setInterval(() => setSlide((s) => (s + 1) % total), 5500)
+    return () => window.clearInterval(id)
+  }, [total])
+
+  return (
+    <section id="nora" className="notibot-section">
+      <div className="section-wrap">
+        <div className="notibot-layout">
+          <div className="notibot-copy">
+            <h2 className="section-title reveal">
+              Perkenalkan sahabat baru Anda, <span className="hero-accent">Nora</span>
+            </h2>
+            <p className="section-body reveal delay-1 notibot-body">
+              Nora adalah asisten pribadi kantor notaris Anda. Chat seperti di WhatsApp: minta dokumen,
+              simpan berkas ke Drive, ubah ke PDF, cek order, atau buat pengingat di kalender. Semuanya
+              dalam Bahasa Indonesia.
+            </p>
+            <ul className="notibot-list reveal delay-2">
+              <li><IconFolder size={16} /> Kirim atau minta dokumen order, langsung dari chat</li>
+              <li><IconBadgeCheck size={16} /> Simpan berkas ke Google Drive yang sudah terorganisir per order</li>
+              <li><IconFileText size={16} /> Ubah dokumen menjadi PDF tanpa ribet</li>
+              <li><IconCalendar size={16} /> Buat pengingat ke Google Calendar untuk jadwal akta</li>
+              <li><IconLock size={16} /> Hanya data kantor Anda; Nora tidak mengubah data tanpa perintah jelas</li>
+            </ul>
+          </div>
+
+          <div className="nora-carousel reveal delay-1">
+            <div className="wa-phone">
+              <div className="wa-status-bar" aria-hidden="true">
+                <span>09:41</span>
+                <span className="wa-status-icons">●●●</span>
+              </div>
+              <div className="wa-header">
+                <span className="wa-avatar-wrap" aria-hidden="true">
+                  <img className="wa-avatar" src={notiveLogo} width={26} height={26} alt="" />
+                </span>
+                <div className="wa-header-text">
+                  <div className="wa-header-name">Nora</div>
+                  <div className="wa-header-sub">online</div>
+                </div>
+              </div>
+              <div className="wa-body-stack" aria-live="polite">
+                {NORA_SLIDES.map((s, i) => (
+                  <div
+                    key={s.id}
+                    className={`wa-slide ${i === slide ? 'is-active' : ''}`}
+                    aria-hidden={i !== slide}
+                  >
+                    <div className="wa-day">Hari ini</div>
+                    {s.messages}
+                  </div>
+                ))}
+              </div>
+              <div className="wa-composer" aria-hidden="true">
+                <span className="wa-composer-clip"><IconPaperclip size={18} /></span>
+                <span className="wa-composer-input">Tanya Nora…</span>
+                <span className="wa-composer-send"><IconSend size={16} /></span>
+              </div>
+            </div>
+
+            <div className="nora-carousel-controls">
+              <button
+                type="button"
+                className="nora-nav-btn"
+                aria-label="Contoh sebelumnya"
+                onClick={() => go(slide - 1)}
+              >
+                <IconChevronLeft size={18} />
+              </button>
+              <div className="nora-dots" role="tablist" aria-label="Contoh percakapan Nora">
+                {NORA_SLIDES.map((s, i) => (
+                  <button
+                    key={s.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={i === slide}
+                    aria-label={s.caption}
+                    className={`nora-dot ${i === slide ? 'is-active' : ''}`}
+                    onClick={() => setSlide(i)}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                className="nora-nav-btn"
+                aria-label="Contoh berikutnya"
+                onClick={() => go(slide + 1)}
+              >
+                <IconChevronRight size={18} />
+              </button>
+            </div>
+            <p className="nora-caption">{current.caption}</p>
+          </div>
+        </div>
       </div>
-      <div className="chat-bubble bot">
-        <p>Berdasarkan data kantor Anda di bulan Mei 2024:</p>
-        <ul>
-          <li><strong>Dewi Pratiwi</strong>: 0 order baru</li>
-          <li><strong>Indra Saputra</strong>: 0 order baru</li>
-        </ul>
-        <p>Total: <strong>2 dari 7 PIC</strong>. Ingin saya tampilkan order aktif untuk redistribusi?</p>
-      </div>
-      <div className="chat-input-mock">
-        <span>Ketik pertanyaan Anda</span>
-        <IconArrowUpRight size={11} />
-      </div>
-    </>
+    </section>
   )
 }
 
@@ -512,10 +765,10 @@ function Stats() {
 
 function HowItWorks() {
   const steps = [
-    { n: 1, title: 'Daftar kantor', body: 'Buat akun owner dan kantor dalam dua menit. Uji coba 14 hari, tanpa kartu kredit, langsung aktif.' },
-    { n: 2, title: 'Tambah tim & PIC', body: 'Undang staf sebagai PIC internal. Setiap PIC terisolasi dalam satu kantor, aman secara multi-tenant.' },
-    { n: 3, title: 'Buat atau impor order', body: 'Buat order manual, unggah PDF untuk autofill AI, atau impor 100+ baris dari CSV sekaligus.' },
-    { n: 4, title: 'Tanya Notive kapan saja', body: 'Pantau progress, saring lewat URL yang bisa di-bookmark, dan tanya Notibot dalam Bahasa Indonesia.' },
+    { n: 1, title: 'Daftar kantor', body: 'Buat akun Notaris (owner) dan kantor dalam dua menit. Uji coba 14 hari, tanpa kartu kredit, langsung aktif.' },
+    { n: 2, title: 'Hubungkan Drive & tambah PIC', body: 'Sambungkan Google Drive kantor, lalu undang staf sebagai PIC. Data tiap kantor tetap terpisah dan aman.' },
+    { n: 3, title: 'Buat atau impor order', body: 'Buat order manual, isi otomatis dari PDF, atau impor dari spreadsheet. Folder Drive dibuat otomatis per order.' },
+    { n: 4, title: 'Pantau & tanya Nora', body: 'Lihat laporan bisnis, cari order dengan mudah, dan tanya Nora kapan saja, seperti bertanya ke rekan kerja.' },
   ]
   return (
     <section id="how" className="how-section">
@@ -542,63 +795,6 @@ function HowItWorks() {
   )
 }
 
-function Notibot() {
-  return (
-    <section id="notibot" className="notibot-section">
-      <div className="section-wrap">
-        <div className="notibot-layout">
-          <div className="notibot-copy">
-            <h2 className="section-title reveal">
-              Tanya data Anda dalam <span className="hero-accent">Bahasa Indonesia</span>
-            </h2>
-            <p className="section-body reveal delay-1 notibot-body">
-              Notibot memahami struktur kantor Anda. Tanpa query SQL, tanpa laporan PDF, cukup ajukan
-              pertanyaan seperti biasa.
-            </p>
-            <ul className="notibot-list reveal delay-2">
-              <li><IconBadgeCheck size={16} /> Terbatas pada satu kantor, Notibot tidak pernah melihat data kantor lain</li>
-              <li><IconLock size={16} /> Read-only, tidak bisa menambah, mengubah, atau menghapus data</li>
-              <li><IconDatabase size={16} /> Empat tools: cari order, statistik PIC, PIC tidak aktif, daftar PIC</li>
-              <li><IconBolt size={16} /> Kuota 1.000 prompt per bulan pada paket Profesional</li>
-            </ul>
-          </div>
-          <div className="notibot-chat reveal delay-1" aria-hidden="true">
-            <div className="chat-window">
-              <div className="chat-window-header">
-                <span className="chat-dot" />
-                <div>
-                  <div className="chat-window-title">Notibot</div>
-                  <div className="chat-window-sub">Online &amp; siap membantu</div>
-                </div>
-              </div>
-              <div className="chat-window-body">
-                <div className="chat-bubble bot">Selamat pagi, ada yang bisa saya bantu hari ini?</div>
-                <div className="chat-bubble user">Tampilkan order Jual Beli yang belum lunas di bulan ini</div>
-                <div className="chat-bubble bot">
-                  <p>Saya menemukan <strong>8 order Jual Beli</strong> dengan status <em>Tagihan</em> di Mei 2024:</p>
-                  <table className="chat-table">
-                    <thead><tr><th>Klien</th><th>PIC</th><th>Status</th></tr></thead>
-                    <tbody>
-                      <tr><td>PT Maju Bersama</td><td>Rina S.</td><td>Tagihan</td></tr>
-                      <tr><td>Citra Lestari</td><td>Andi W.</td><td>Tagihan</td></tr>
-                      <tr><td>PT Bumi Hijau</td><td>Rina S.</td><td>Tagihan</td></tr>
-                    </tbody>
-                  </table>
-                  <p className="chat-hint">Ketik "lanjut" untuk halaman 2 dari 3.</p>
-                </div>
-              </div>
-              <div className="chat-window-input">
-                <input placeholder="Ketik pertanyaan Anda" readOnly aria-label="Pesan Notibot" />
-                <button aria-label="Kirim"><IconArrowUpRight size={14} /></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 function Testimonials() {
   const items = [
     {
@@ -611,7 +807,7 @@ function Testimonials() {
     },
     {
       stars: 5,
-      quote: 'Fitur impor CSV menyelamatkan saya saat memindahkan 600+ order lama. Laporan kesalahan per baris membuat saya bisa memperbaiki data yang salah format tanpa mengunggah ulang dari awal.',
+      quote: 'Berkas tetap di Google Drive kantor kami. Notive hanya mengorganisir folder per order. Saya tenang karena dokumen tidak pindah ke server orang lain.',
       name: 'Benny Prasetyo, S.H.',
       role: 'Notaris · Surabaya',
       tint: AV.amber,
@@ -619,7 +815,7 @@ function Testimonials() {
     },
     {
       stars: 5,
-      quote: 'Notibot mengerti pertanyaan saya dalam Bahasa Indonesia. "PIC mana yang belum tangani order minggu ini?", langsung dijawab. Tim saya tidak perlu belajar SQL atau filter rumit.',
+      quote: 'Nora mengerti pertanyaan saya dalam Bahasa Indonesia, termasuk "file apa saja di order ini?". Laporan bisnis juga membantu saya lihat beban PIC tiap bulan.',
       name: 'Ratna Hendryati, S.H., M.Kn.',
       role: 'Notaris · Bandung',
       tint: AV.green,
@@ -671,8 +867,8 @@ function Pricing() {
         'Hingga 100 order per bulan',
         '2 PIC internal',
         'Filter & pencarian dasar',
+        'Berkas di Google Drive kantor',
         'Dukungan via email',
-        'Penyimpanan tautan tanpa batas',
       ],
       cta: 'Mulai uji coba 14 hari',
     },
@@ -685,10 +881,11 @@ function Pricing() {
       features: [
         'Order tidak terbatas',
         'PIC tidak terbatas',
-        'Autofill PDF (Gemini OCR)',
-        'Impor CSV massal',
-        'Notibot AI · 1.000 prompt per bulan',
-        'Filter cerdas + URL bookmarkable',
+        'Berkas di Google Drive kantor',
+        'Laporan bisnis',
+        'Isi formulir otomatis dari PDF',
+        'Impor dari spreadsheet (CSV)',
+        'Nora, asisten pribadi · 1.000 pertanyaan/bulan',
         'Dukungan WhatsApp prioritas',
       ],
       cta: 'Mulai uji coba 14 hari',
@@ -699,13 +896,13 @@ function Pricing() {
       desc: 'Untuk firma hukum dan jaringan kantor multi-cabang.',
       price: 'Hubungi kami',
       features: [
-        'Multi-kantor (multi-tenant)',
-        'SLA uptime 99,9% berkontrak',
-        'Integrasi API kustom',
-        'Audit log tiap perubahan',
+        'Multi-kantor (aman antar cabang)',
+        'Jaminan layanan 99,9%',
+        'Bantuan khusus WhatsApp & desktop',
+        'Batas pertanyaan Nora yang lebih besar',
         'Manajer akun dedikasi',
         'Onboarding & pelatihan tim',
-        'Batas prompt AI kustom',
+        'Prioritas fitur baru',
       ],
       cta: 'Jadwalkan demo',
     },
@@ -717,7 +914,7 @@ function Pricing() {
         <div className="pricing-header">
           <h2 className="section-title reveal centered">Harga transparan, tanpa kejutan</h2>
           <p className="section-body reveal delay-1 centered">
-            Semua paket mencakup isolasi data per kantor, keamanan JWT, dan pembaruan platform
+            Semua paket mencakup data terpisah per kantor, keamanan login, dan pembaruan platform
             berkala. Uji coba 14 hari tanpa kartu kredit.
           </p>
         </div>
@@ -736,7 +933,7 @@ function Pricing() {
               <ul className="plan-feature-list">
                 {p.features.map((f) => <li key={f}><IconCheck size={15} /> {f}</li>)}
               </ul>
-              <a href="#trial" className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}>{p.cta}</a>
+              <a href="https://dashboard.notive.id/register" className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}>{p.cta}</a>
             </div>
           ))}
         </div>
@@ -749,27 +946,27 @@ function Faq() {
   const items = [
     {
       q: 'Bagaimana Notive memastikan data kantor saya tidak bocor ke kantor lain?',
-      a: 'Setiap request membawa JWT yang berisi companyId. Backend Notive selalu meng-scope query database dengan WHERE company_id = ?, tidak pernah dari body request. Setiap upaya perubahan lintas-kantor akan ditolak.',
+      a: 'Setiap kantor punya ruang data sendiri. Saat Anda masuk, Notive hanya menampilkan order dan PIC milik kantor Anda. Kantor lain tidak bisa melihat data Anda, begitu pula sebaliknya.',
     },
     {
-      q: 'Apakah Notibot bisa menghapus atau mengubah data kantor saya?',
-      a: 'Tidak. Notibot dibatasi read-only lewat instruksi sistem yang eksplisit dan validasi tools. Ia hanya bisa membaca order, PIC, dan statistik. Setiap permintaan menghapus atau mengubah ditolak secara sopan.',
+      q: 'Apakah dokumen saya disimpan di server Notive?',
+      a: 'Tidak. Berkas tetap di Google Drive kantor Anda. Notive hanya membantu membuat folder per order dan menampilkan nama file. Isi dokumen tidak dipindahkan ke server Notive.',
     },
     {
-      q: 'Apakah saya perlu memberikan kartu kredit untuk uji coba?',
-      a: 'Tidak. Uji coba 14 hari Notive aktif otomatis saat Anda mendaftar, tanpa kartu kredit dan tanpa data pembayaran. Kantor Anda otomatis non-aktif saat masa uji coba habis bila tidak dilanjutkan.',
+      q: 'Apakah Nora bisa menghapus atau mengubah data kantor saya?',
+      a: 'Tidak. Nora hanya membantu mencari dan menjelaskan. Ia tidak bisa menambah, mengubah, atau menghapus order maupun berkas. Setiap permintaan seperti itu akan ditolak dengan sopan.',
+    },
+    {
+      q: 'Apa itu laporan bisnis?',
+      a: 'Ringkasan kinerja kantor: berapa order masuk, yang aktif, yang sudah lunas, tren per bulan, serta beban kerja tiap PIC. Anda bisa pilih bulan ini, bulan lalu, 6 bulan terakhir, atau tanggal sendiri.',
     },
     {
       q: 'Bagaimana cara memindahkan data dari spreadsheet lama kami?',
-      a: 'Gunakan fitur Impor CSV. Unduh template CSV dari Notive, isi dengan data lama (mendukung 12 kolom termasuk No. Sertifikat, PIC Bank, dan Progress). Maksimal 3 MB per berkas dengan laporan kesalahan per baris.',
+      a: 'Gunakan fitur Impor CSV. Unduh template dari Notive, isi dengan data lama (termasuk No. Sertifikat, PIC Bank, dan Progress). Maksimal 3 MB per berkas, dengan laporan baris mana yang gagal agar mudah diperbaiki.',
     },
     {
-      q: 'Apakah Notive bisa diakses dari ponsel?',
-      a: 'Ya. Dashboard Notive responsif penuh hingga lebar 360px: sidebar berubah menjadi drawer geser, daftar order menjadi kartu yang ramah ponsel, dan filter dikompres menjadi panel sliding.',
-    },
-    {
-      q: 'Apa yang terjadi bila saya melebihi 1.000 prompt Notibot per bulan?',
-      a: 'Notibot menampilkan pesan bahwa batas bulanan tercapai dan akan reset otomatis pada tanggal 1 bulan berikutnya. Paket Firma bisa meminta batas kustom.',
+      q: 'Bagaimana cara berbicara dengan Nora?',
+      a: 'Buka menu Tanya Nora di dashboard, lalu ketik pertanyaan seperti biasa, misalnya "Siapa PIC yang belum menangani order bulan ini?" atau "Berkas apa saja di order Budi Santoso?". Tidak perlu belajar istilah teknis.',
     },
   ]
   return (
@@ -804,7 +1001,7 @@ function Cta() {
           tanpa kartu kredit, batalkan kapan saja.
         </p>
         <div className="cta-actions">
-          <a href="#" className="btn-hero-primary">
+          <a href="https://dashboard.notive.id/register" className="btn-hero-primary">
             Mulai uji coba 14 hari
             <IconArrowRight size={14} />
           </a>
@@ -834,8 +1031,8 @@ function Footer() {
             <span className="footer-brand-name">Notive</span>
           </div>
           <p className="footer-brand-desc">
-            Platform manajemen order untuk notaris Indonesia. Dibuat untuk kantor yang ingin bekerja
-            lebih cepat, lebih rapi, dan lebih aman.
+            Platform manajemen order untuk notaris Indonesia. Order, PIC, Google Drive kantor Anda,
+            laporan bisnis, dan Nora, asisten pribadi Anda. Dokumen tetap milik kantor.
           </p>
           <div className="footer-locale">
             <IconScale size={12} />
@@ -845,12 +1042,12 @@ function Footer() {
         <div className="footer-cols">
           <div className="footer-col">
             <div className="footer-col-title">Produk</div>
-            <a href="#kalkulator">Kalkulator</a>
+            <a href="#nora">Nora</a>
             <a href="#features">Fitur</a>
+            <a href="#kalkulator">Kalkulator</a>
             <a href="#how">Cara Kerja</a>
-            <a href="#notibot">Notibot AI</a>
             <a href="#pricing">Harga</a>
-            <a href="#trial">Uji coba gratis</a>
+            <a href="https://dashboard.notive.id/register">Uji coba gratis</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Solusi</div>
@@ -861,8 +1058,8 @@ function Footer() {
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Keamanan</div>
-            <a href="#">Isolasi multi-tenant</a>
-            <a href="#">JWT &amp; enkripsi</a>
+            <a href="#">Data terpisah per kantor</a>
+            <a href="#">Login aman</a>
             <a href="#">Kebijakan privasi</a>
             <a href="#">Syarat &amp; ketentuan</a>
           </div>
@@ -947,10 +1144,10 @@ function App() {
       <Nav open={mobileOpen} setOpen={setMobileOpen} />
       <main>
         <Hero />
-        <TrustBar />
-        <Calculator />
+        <Nora />
         <Features />
-        <Notibot />
+        <Calculator />
+        <TrustBar />
         <Stats />
         <HowItWorks />
         <Testimonials />
