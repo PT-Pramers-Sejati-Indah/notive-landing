@@ -77,7 +77,7 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
         <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
       </ul>
       <div className="nav-right">
-        <a href="#login" className="btn-outline">Masuk</a>
+        <a href="https://dashboard.notive.id/login" className="btn-outline">Masuk</a>
         <a href="https://dashboard.notive.id/register" className="btn-cta">Coba 14 hari gratis</a>
       </div>
       <button
@@ -99,7 +99,7 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
         <a href="#pricing" onClick={() => setOpen(false)}>Harga</a>
         <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
         <div className="mobile-menu-actions">
-          <a href="#login" className="btn-outline" onClick={() => setOpen(false)}>Masuk</a>
+          <a href="https://dashboard.notive.id/login" className="btn-outline" onClick={() => setOpen(false)}>Masuk</a>
           <a href="https://dashboard.notive.id/register" className="btn-cta" onClick={() => setOpen(false)}>Coba 14 hari gratis</a>
         </div>
       </div>

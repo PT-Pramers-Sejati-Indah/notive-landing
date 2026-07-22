@@ -1,0 +1,9 @@
+# Notive
+
+> Platform manajemen order untuk kantor notaris Indonesia — kelola Jual Beli, Hak Tanggungan, dan transaksi hukum lainnya, dengan Nora, asisten AI berbahasa Indonesia.
+
+- [Beranda & fitur](https://notive.id/): Manajemen order, integrasi Google Drive, tim & PIC, laporan bisnis, dan Nora.
+- [Kalkulator pajak & biaya akta](https://notive.id/#kalkulator): Estimasi BPHTB, PPh Final, dan honorarium notaris.
+- [Harga](https://notive.id/#pricing): Paket Basic, Pro, dan Firma.
+- [FAQ](https://notive.id/#faq): Pertanyaan umum seputar keamanan data, penyimpanan berkas, dan Nora.
+- [Coba gratis](https://dashboard.notive.id/register): Uji coba 14 hari tanpa kartu kredit.
