@@ -2,6 +2,8 @@
 
 Tracked from the 2026-07-23 SEO audit. These were explicitly deferred by the user ("will add later") — not yet actioned.
 
+For the Google Search ranking strategy (branded + generic keyword targeting), see [SEO-GROWTH-PLAN.md](SEO-GROWTH-PLAN.md).
+
 ## 1. `#demo` link has no destination
 `src/App.tsx` — `Hero()` component, "Lihat demo (2 menit)" button uses `href="#demo"` with no matching section. Needs a real demo video/page.
 
