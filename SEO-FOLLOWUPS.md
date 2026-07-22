@@ -8,12 +8,14 @@ For the Google Search ranking strategy (branded + generic keyword targeting), se
 `src/App.tsx` — `Hero()` component, "Lihat demo (2 menit)" button uses `href="#demo"` with no matching section. Needs a real demo video/page.
 
 ## 2. Dead footer links (`href="#"`)
-`src/App.tsx` — `Footer()` component. 9 links with no destination:
+`src/App.tsx` — `Footer()` component. 8 links still with no destination (down from 9 — "Hubungi kami" on the Firma pricing plan and "Bicara dengan tim" on the CTA banner now point to `https://wa.me/6281384323745`):
 - **Solusi**: Notaris perorangan, Kantor notaris, Firma hukum, PPAT
 - **Keamanan**: Data terpisah per kantor, Login aman, Kebijakan Privasi, Syarat & Ketentuan
 - **Perusahaan**: Tentang, Blog, Hubungi, Status
 
 Kebijakan Privasi and Syarat & Ketentuan are worth prioritizing — expected pages for a SaaS handling client documents, independent of SEO value.
+
+Note: the footer's "Hubungi" link (Perusahaan column) is still a dead `#` — wasn't touched since it wasn't explicitly called out with the other two. Say the word if you want it pointed at the same WhatsApp link, or if it should go to a dedicated contact page instead.
 
 ## 3. `og:image` is a repurposed screenshot
 `public/og-image.webp` (1280×800, copied from the dashboard hero screenshot) is used as the social share image. Works, but not cropped for the ~1200×630 aspect ratio platforms expect. Recommend a purpose-built social card.

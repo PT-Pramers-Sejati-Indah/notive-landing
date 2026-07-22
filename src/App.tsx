@@ -903,6 +903,7 @@ function Pricing() {
         'Dukungan prioritas penuh',
       ],
       cta: 'Hubungi kami',
+      href: 'https://wa.me/6281384323745',
     },
   ]
 
@@ -931,7 +932,13 @@ function Pricing() {
               <ul className="plan-feature-list">
                 {p.features.map((f) => <li key={f}><IconCheck size={15} /> {f}</li>)}
               </ul>
-              <a href={p.href ?? 'https://dashboard.notive.id/register'} className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}>{p.cta}</a>
+              <a
+                href={p.href ?? 'https://dashboard.notive.id/register'}
+                className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}
+                {...(p.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {p.cta}
+              </a>
             </div>
           ))}
         </div>
@@ -1003,7 +1010,7 @@ function Cta() {
             Mulai uji coba 14 hari
             <IconArrowRight size={14} />
           </a>
-          <a href="#" className="btn-hero-secondary">
+          <a href="https://wa.me/6281384323745" className="btn-hero-secondary" target="_blank" rel="noopener noreferrer">
             Bicara dengan tim
           </a>
         </div>

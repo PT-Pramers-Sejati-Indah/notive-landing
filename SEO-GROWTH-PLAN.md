@@ -11,6 +11,8 @@ Each item is tagged **[Code]** (something this repo/Claude can do) or **[Account
 
 ## P1 — Branded search ("notive" / "notive id")
 - **[Account]** Claim/create consistent branded profiles linking back to notive.id: LinkedIn Company Page, Instagram, and similar. These are what Google typically surfaces alongside a small brand's own homepage for a branded query, and they reinforce entity association.
+  - Note: exact `notive` handle is taken on LinkedIn and Instagram by an unrelated Dutch IT consultancy — settled on the **`notive.id`** handle instead.
+  - Ready-to-paste bios/descriptions drafted in [SEO-P1-BRAND-PROFILES.md](SEO-P1-BRAND-PROFILES.md) for LinkedIn, Instagram, and Google Business Profile. Still needs from you: a higher-res logo for all three profile photos (current one is 59×37px).
 - **[Account]** Consider a Google Business Profile even without a public office — it can still anchor a knowledge-panel-style presence for the brand name.
 - **[Code]** Done: `Organization` + `WebSite` JSON-LD already in `index.html` confirm the entity name/URL to Google.
 
