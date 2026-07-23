@@ -1,6 +1,7 @@
 import { useEffect, useState, type SVGProps } from 'react'
 import './App.css'
 import { Calculator } from './Calculator'
+import { Register } from './Register'
 import dashboardPreview from './assets/dashboard-preview.webp'
 import notiveLogo from './assets/notive-logo.png'
 
@@ -78,7 +79,7 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
       </ul>
       <div className="nav-right">
         <a href="https://dashboard.notive.id/login" className="btn-outline">Masuk</a>
-        <a href="https://dashboard.notive.id/register" className="btn-cta">Coba 14 hari gratis</a>
+        <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-cta">Coba 14 hari gratis</a>
       </div>
       <button
         className="nav-toggle"
@@ -100,7 +101,7 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
         <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
         <div className="mobile-menu-actions">
           <a href="https://dashboard.notive.id/login" className="btn-outline" onClick={() => setOpen(false)}>Masuk</a>
-          <a href="https://dashboard.notive.id/register" className="btn-cta" onClick={() => setOpen(false)}>Coba 14 hari gratis</a>
+          <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-cta" onClick={() => setOpen(false)}>Coba 14 hari gratis</a>
         </div>
       </div>
     </nav>
@@ -121,7 +122,7 @@ function Hero() {
             Notive menggantikan spreadsheet lama tanpa pernah menyimpan dokumen Anda.
           </p>
           <div className="hero-actions reveal delay-2">
-            <a href="https://dashboard.notive.id/register" className="btn-hero-primary">
+            <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-hero-primary">
               Mulai uji coba gratis
               <IconArrowRight size={14} />
             </a>
@@ -933,9 +934,10 @@ function Pricing() {
                 {p.features.map((f) => <li key={f}><IconCheck size={15} /> {f}</li>)}
               </ul>
               <a
-                href={p.href ?? 'https://dashboard.notive.id/register'}
+                href={p.href ?? '/register'}
                 className={p.featured ? 'btn-plan-featured' : 'btn-plan-outline'}
-                {...(p.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {p.cta}
               </a>
@@ -1006,7 +1008,7 @@ function Cta() {
           tanpa kartu kredit, batalkan kapan saja.
         </p>
         <div className="cta-actions">
-          <a href="https://dashboard.notive.id/register" className="btn-hero-primary">
+          <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-hero-primary">
             Mulai uji coba 14 hari
             <IconArrowRight size={14} />
           </a>
@@ -1052,7 +1054,7 @@ function Footer() {
             <a href="#kalkulator">Kalkulator</a>
             <a href="#how">Cara Kerja</a>
             <a href="#pricing">Harga</a>
-            <a href="https://dashboard.notive.id/register">Uji coba gratis</a>
+            <a href="/register" target="_blank" rel="noopener noreferrer">Uji coba gratis</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Solusi</div>
@@ -1091,6 +1093,38 @@ function Footer() {
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [currentPath, setCurrentPath] = useState(window.location.pathname)
+
+  useEffect(() => {
+    const handleLocationChange = () => {
+      setCurrentPath(window.location.pathname)
+    }
+    window.addEventListener('popstate', handleLocationChange)
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange)
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a')
+      if (!target) return
+      
+      const href = target.getAttribute('href')
+      const targetAttr = target.getAttribute('target')
+      if (href && targetAttr !== '_blank' && (href === '/register' || href === '/')) {
+        e.preventDefault()
+        window.history.pushState({}, '', href)
+        setCurrentPath(href)
+        window.scrollTo({ top: 0, behavior: 'instant' })
+      }
+    }
+    window.addEventListener('click', handleLinkClick)
+    return () => {
+      window.removeEventListener('click', handleLinkClick)
+    }
+  }, [])
+
 
   useEffect(() => {
     const root = document.documentElement
@@ -1142,6 +1176,18 @@ function App() {
       document.body.style.overflow = ''
     }
   }, [mobileOpen])
+
+  if (currentPath === '/register') {
+    return (
+      <Register
+        onBackToHome={() => {
+          window.history.pushState({}, '', '/')
+          setCurrentPath('/')
+          window.scrollTo({ top: 0, behavior: 'instant' })
+        }}
+      />
+    )
+  }
 
   return (
     <>
