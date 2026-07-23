@@ -50,15 +50,6 @@ const IconChevronLeft = (p: IconProps) => <svg {...I(p)}><polyline points="15 18
 const IconChevronRight = (p: IconProps) => <svg {...I(p)}><polyline points="9 18 15 12 9 6" /></svg>
 const IconSend = (p: IconProps) => <svg {...I(p)}><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
 
-/* Avatar tint palette — built from the brand blue plus a few cohesive hues. */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const AV = {
-  blue: { background: 'oklch(95% 0.03 258)', color: 'oklch(40% 0.15 258)' },
-  cyan: { background: 'oklch(95% 0.045 232)', color: 'oklch(44% 0.12 232)' },
-  green: { background: 'oklch(95% 0.05 152)', color: 'oklch(42% 0.13 152)' },
-  amber: { background: 'oklch(95% 0.06 75)', color: 'oklch(45% 0.11 65)' },
-} as const
-
 /* ============================================================
    Section components
 ============================================================ */
