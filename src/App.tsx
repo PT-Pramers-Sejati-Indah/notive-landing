@@ -29,7 +29,7 @@ const IconShield = (p: IconProps) => <svg {...I(p)}><path d="M12 22s8-4 8-10V5l-
 const IconTrending = (p: IconProps) => <svg {...I(p)}><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /><polyline points="16 7 22 7 22 13" /></svg>
 const IconFile = (p: IconProps) => <svg {...I(p)}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
 const IconFileText = (p: IconProps) => <svg {...I(p)}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="16" y1="13" x2="8" y2="13" /><line x1="16" y1="17" x2="8" y2="17" /></svg>
-const IconUsers = (p: IconProps) => <svg {...I(p)}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+
 const IconSparkles = (p: IconProps) => <svg {...I(p)}><path d="M12 3 13.5 9 19.5 10.5 13.5 12 12 18 10.5 12 4.5 10.5 10.5 9 12 3z" /><path d="M19 17l.7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7z" /><path d="M5 4l.5 1.5L7 6l-1.5.5L5 8l-.5-1.5L3 6l1.5-.5z" /></svg>
 const IconScan = (p: IconProps) => <svg {...I(p)}><path d="M3 7V5a2 2 0 0 1 2-2h2" /><path d="M17 3h2a2 2 0 0 1 2 2v2" /><path d="M21 17v2a2 2 0 0 1-2 2h-2" /><path d="M7 21H5a2 2 0 0 1-2-2v-2" /><line x1="7" y1="12" x2="17" y2="12" /></svg>
 const IconLock = (p: IconProps) => <svg {...I(p)}><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
@@ -38,7 +38,7 @@ const IconChevronDown = (p: IconProps) => <svg {...I(p)}><polyline points="6 9 1
 const IconMenu = (p: IconProps) => <svg {...I(p)}><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
 const IconX = (p: IconProps) => <svg {...I(p)}><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
 const IconScale = (p: IconProps) => <svg {...I(p)}><path d="M16 16h6l-3-7-3 7zM2 16h6l-3-7-3 7z" /><path d="M7 16a3 3 0 0 0 3 3h4a3 3 0 0 0 3-3" /><path d="M12 3v17" /><path d="M8 21h8" /></svg>
-const IconBuilding = (p: IconProps) => <svg {...I(p)}><rect x="4" y="2" width="16" height="20" rx="1" /><path d="M9 22v-4h6v4" /><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01" /></svg>
+
 const IconBadgeCheck = (p: IconProps) => <svg {...I(p)}><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76z" /><path d="m9 12 2 2 4-4" /></svg>
 const IconFolder = (p: IconProps) => <svg {...I(p)}><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" /></svg>
 const IconChart = (p: IconProps) => <svg {...I(p)}><path d="M18 20V10M12 20V4M6 20v-6" /></svg>
@@ -51,6 +51,7 @@ const IconChevronRight = (p: IconProps) => <svg {...I(p)}><polyline points="9 18
 const IconSend = (p: IconProps) => <svg {...I(p)}><line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" /></svg>
 
 /* Avatar tint palette — built from the brand blue plus a few cohesive hues. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const AV = {
   blue: { background: 'oklch(95% 0.03 258)', color: 'oklch(40% 0.15 258)' },
   cyan: { background: 'oklch(95% 0.045 232)', color: 'oklch(44% 0.12 232)' },
@@ -158,7 +159,7 @@ function Hero() {
               alt="Dashboard Notive menampilkan daftar order notaris lengkap dengan filter PIC, status, dan pembayaran"
             />
           </div>
-          <figcaption className="shot-caption">Daftar order langsung dari kantor notaris yang memakai Notive setiap hari.</figcaption>
+          <figcaption className="shot-caption">Tampilan dashboard Notive.</figcaption>
         </figure>
       </div>
     </section>
@@ -166,25 +167,25 @@ function Hero() {
 }
 
 function TrustBar() {
-  const items = [
-    { icon: <IconScale size={14} />, label: 'Ikatan Notaris Indonesia' },
-    { icon: <IconBuilding size={14} />, label: 'Notaris Profesional' },
-    { icon: <IconBadgeCheck size={14} />, label: 'PPAT Bersertifikat' },
-    { icon: <IconUsers size={14} />, label: 'Asosiasi Notaris Muda' },
-    { icon: <IconShield size={14} />, label: 'Siap standar ISO 27001' },
-  ]
+  // const items = [
+  //   { icon: <IconScale size={14} />, label: 'Ikatan Notaris Indonesia' },
+  //   { icon: <IconBuilding size={14} />, label: 'Notaris Profesional' },
+  //   { icon: <IconBadgeCheck size={14} />, label: 'PPAT Bersertifikat' },
+  //   { icon: <IconUsers size={14} />, label: 'Asosiasi Notaris Muda' },
+  //   { icon: <IconShield size={14} />, label: 'Siap standar ISO 27001' },
+  // ]
   return (
     <div className="logos-bar">
       <div className="logos-inner">
         <span className="logos-label">Dipercaya notaris di seluruh Indonesia</span>
-        <div className="logos-list">
+        {/* <div className="logos-list">
           {items.map((it) => (
             <div className="logo-item" key={it.label}>
               <div className="logo-badge">{it.icon}</div>
               {it.label}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   )
@@ -212,13 +213,6 @@ const FEATURES: Feature[] = [
     body: 'Hubungkan Google Drive kantor. Notive membuat folder per order otomatis. Dokumen tetap milik Anda; Notive tidak menyimpan atau menguasai berkas.',
     icon: <IconFolder size={16} />,
     preview: <PreviewDrive />,
-  },
-  {
-    id: 'pic',
-    title: 'Tim Notaris & PIC Internal',
-    body: 'Owner terdaftar sebagai Notaris. Tambah staf sebagai PIC Internal. Setiap order punya penanggung jawab yang jelas, dan data hanya terlihat di dalam kantor Anda.',
-    icon: <IconUsers size={16} />,
-    preview: <PreviewPic />,
   },
   {
     id: 'analytics',
@@ -338,36 +332,6 @@ function PreviewOrders() {
             <div className="akta-info-meta">{r.tx} · diperbarui {r.date}/2024</div>
           </div>
           <span className={`status-pill ${r.status}`}>{r.label}</span>
-        </div>
-      ))}
-    </>
-  )
-}
-
-function PreviewPic() {
-  const pics = [
-    { initials: 'AP', name: 'Amanda Putri', role: 'Notaris', count: 64, tint: AV.blue },
-    { initials: 'RS', name: 'Rina Sari', role: 'PIC Internal', count: 38, tint: AV.amber },
-    { initials: 'AW', name: 'Andi Wijaya', role: 'PIC Internal', count: 27, tint: AV.green },
-    { initials: 'DP', name: 'Dewi Pratiwi', role: 'PIC Internal', count: 23, tint: AV.cyan },
-  ]
-  return (
-    <>
-      <div className="akta-header">
-        <div className="akta-title">Tim Kantor</div>
-        <div className="akta-btn"><IconUsers size={11} /> Tambah PIC</div>
-      </div>
-      {pics.map((p) => (
-        <div className="client-card" key={p.initials}>
-          <div className="client-avatar" style={p.tint}>{p.initials}</div>
-          <div>
-            <div className="client-name">{p.name}</div>
-            <div className="client-meta">{p.role}</div>
-          </div>
-          <div className="client-count">
-            <div className="client-count-num">{p.count}</div>
-            <div className="client-count-label">order ditangani</div>
-          </div>
         </div>
       ))}
     </>
@@ -744,8 +708,8 @@ function Nora() {
 
 function Stats() {
   const items = [
-    { num: '2.800', sup: '+', lbl: 'Notaris aktif' },
-    { num: '140K', sup: '+', lbl: 'Order diproses' },
+    { num: '10.000', sup: '+', lbl: 'Pertanyaan terjawab oleh Nora' },
+    { num: '2000', sup: '+', lbl: 'Order diproses' },
     { num: '34', sup: '', lbl: 'Provinsi terjangkau' },
     { num: '99,9', sup: '%', lbl: 'Uptime SLA' },
   ]
@@ -865,7 +829,7 @@ function Pricing() {
       features: [
         'Hingga 100 order',
         '5 PIC internal',
-        'Auto Drive Organizer',
+        'Integrasi Google Drive',
         'Nora via WhatsApp · 300 pertanyaan/bulan',
         'Dukungan via email',
       ],
@@ -880,7 +844,7 @@ function Pricing() {
       features: [
         'Order tidak terbatas',
         'PIC tidak terbatas',
-        'Auto Drive Organizer',
+        'Integrasi Google Drive',
         'Nora lebih pintar',
         'Nora tidak terbatas',
         'Laporan bisnis & analitik',
@@ -1002,8 +966,8 @@ function Cta() {
       <div className="cta-inner reveal">
         <h2>Siap memodernkan kantor notaris Anda?</h2>
         <p>
-          Bergabung bersama 2.800+ notaris yang sudah meninggalkan spreadsheet. Uji coba 14 hari,
-          tanpa kartu kredit, batalkan kapan saja.
+          Bergabung bersama notaris lain yang sudah meninggalkan spreadsheet. <b style={{fontWeight: 'bolder'}}>Uji coba 14 hari,
+          tanpa kartu kredit</b>, batalkan kapan saja.
         </p>
         <div className="cta-actions">
           <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-hero-primary">

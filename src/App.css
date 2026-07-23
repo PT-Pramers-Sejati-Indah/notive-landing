@@ -404,7 +404,7 @@ nav.scrolled {
   gap: 18px 40px;
   justify-content: center;
 }
-.logos-label { font-size: 0.82rem; color: var(--ink-3); font-weight: 600; }
+.logos-label { font-size: 1rem; color: var(--ink-3); font-weight: 600; }
 .logos-list { display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: center; }
 .logo-item { display: inline-flex; align-items: center; gap: 9px; font-size: 0.9rem; font-weight: 600; color: var(--ink-2); }
 .logo-badge {
@@ -1188,7 +1188,18 @@ nav.scrolled {
 .how-section { background: var(--bg); }
 .how-header { margin-bottom: clamp(40px, 5vw, 64px); }
 .how-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; position: relative; }
-.how-connector { position: absolute; top: 24px; left: 12.5%; right: 12.5%; height: 2px; background: var(--border-2); z-index: 0; }
+/* 84px = 3 gaps * 28px; matches the grid's actual column-width math so endpoints land on circle centers */
+
+.how-connector { 
+  position: absolute; 
+  top: 25px; 
+  /* left: calc((100% - 84px) / 8);  */
+  left: 0px;
+  right: 0px;
+  height: 2px; 
+  background: var(--border-2); z-index: 0; 
+}
+
 .how-step { position: relative; z-index: 1; }
 .step-num-wrap {
   width: 50px; height: 50px; border-radius: 50%;
@@ -1197,8 +1208,9 @@ nav.scrolled {
   background: var(--surface); color: var(--ink-2);
   border: 1px solid var(--border-2);
   margin-bottom: 18px;
+  align-self: center;
 }
-.step-num-wrap.highlighted { background: var(--brand); color: var(--on-brand); border-color: var(--brand); }
+/* .step-num-wrap.highlighted { background: var(--brand); color: var(--on-brand); border-color: var(--brand); } */
 .how-step h3 { font-family: var(--font-sans); font-size: 1.08rem; font-weight: 700; color: var(--ink); }
 .how-step p { margin-top: 8px; font-size: 0.94rem; color: var(--ink-2); }
 
@@ -1212,13 +1224,18 @@ nav.scrolled {
 .era-wrap {
   padding-block: clamp(48px, 6vw, 72px);
   max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 .era-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  /* display: grid; */
+  /* grid-template-columns: minmax(0, 1fr) auto; */
+  /* align-self: self-start; */
   gap: clamp(28px, 5vw, 64px);
+  display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .era-copy {
   min-width: 0;
