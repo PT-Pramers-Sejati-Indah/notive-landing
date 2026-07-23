@@ -4,6 +4,7 @@ import { Calculator } from './Calculator'
 import { Register } from './Register'
 import dashboardPreview from './assets/dashboard-preview.webp'
 import notiveLogo from './assets/notive-logo.png'
+import noraAvatar from './assets/nora-avatar.webp'
 
 /* ============================================================
    Icon set — Lucide-style, 1.75 stroke width, 24x24 grid.
@@ -475,7 +476,7 @@ function PreviewChat() {
       <div className="wa-mini">
         <div className="wa-mini-header">
           <span className="wa-avatar-wrap" aria-hidden="true">
-            <img className="wa-avatar" src={notiveLogo} width={26} height={26} alt="" />
+            <img className="wa-avatar" src={noraAvatar} width={32} height={32} alt="" />
           </span>
           <div>
             <div className="wa-mini-name">Nora</div>
@@ -676,7 +677,7 @@ function Nora() {
               </div>
               <div className="wa-header">
                 <span className="wa-avatar-wrap" aria-hidden="true">
-                  <img className="wa-avatar" src={notiveLogo} width={26} height={26} alt="" />
+                  <img className="wa-avatar" src={noraAvatar} width={40} height={40} alt="" />
                 </span>
                 <div className="wa-header-text">
                   <div className="wa-header-name">Nora</div>
@@ -796,58 +797,55 @@ function HowItWorks() {
   )
 }
 
-function Testimonials() {
-  const items = [
-    {
-      stars: 5,
-      quote: 'Dulu staf saya butuh 3 jam tiap pagi untuk memperbarui spreadsheet order. Sekarang cukup 20 menit, dan saya bisa langsung melihat PIC mana yang sedang kelebihan beban tanpa bertanya.',
-      name: 'Sri Wahyuni, S.H., M.Kn.',
-      role: 'Notaris & PPAT · Jakarta Selatan',
-      tint: AV.blue,
-      initials: 'SW',
-    },
-    {
-      stars: 5,
-      quote: 'Berkas tetap di Google Drive kantor kami. Notive hanya mengorganisir folder per order. Saya tenang karena dokumen tidak pindah ke server orang lain.',
-      name: 'Benny Prasetyo, S.H.',
-      role: 'Notaris · Surabaya',
-      tint: AV.amber,
-      initials: 'BP',
-    },
-    {
-      stars: 5,
-      quote: 'Nora mengerti pertanyaan saya dalam Bahasa Indonesia, termasuk "file apa saja di order ini?". Laporan bisnis juga membantu saya lihat beban PIC tiap bulan.',
-      name: 'Ratna Hendryati, S.H., M.Kn.',
-      role: 'Notaris · Bandung',
-      tint: AV.green,
-      initials: 'RH',
-    },
+function OpenClaw() {
+  const beats = [
+    { lead: 'Chat biasa', detail: 'Tanya seperti ke staf: order, berkas, progress PIC.' },
+    { lead: 'Di WhatsApp', detail: 'Tempat kantor sudah dipakai setiap hari.' },
+    { lead: 'Langsung nyambung', detail: 'Chat terhubung ke order Notive. Staf cepat ikut paham.' },
   ]
+
   return (
-    <section className="testimonials-section">
-      <div className="section-wrap">
-        <div className="testimonials-header">
-          <h2 className="section-title reveal centered">Dipercaya notaris yang menolak kompromi</h2>
+    <section id="openclaw" className="era-section" aria-labelledby="era-heading">
+      <div className="section-wrap era-wrap">
+        <div className="era-top">
+          <div className="era-copy">
+            <p className="era-kicker reveal">Saatnya mengikuti zaman</p>
+            <h2 id="era-heading" className="era-headline reveal">
+              Jangan jadi notaris yang <em>ketinggalan zaman</em>.
+            </h2>
+            <p className="era-lede reveal delay-1">
+              Spreadsheet dan folder berantakan sudah cukup. Kantor modern butuh bantuan
+              yang sama mudahnya dengan mengirim chat.
+            </p>
+          </div>
+          <div className="era-avatar reveal delay-1">
+            <img
+              src={noraAvatar}
+              alt="Nora, asisten pribadi Notive"
+              width={280}
+              height={280}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
-        <div className="testimonials-grid">
-          {items.map((t, i) => (
-            <article className={`testimonial-card reveal delay-${i}`} key={t.name}>
-              <div className="tcard-stars" aria-label={`${t.stars} dari 5 bintang`}>
-                {Array.from({ length: t.stars }).map((_, k) => (
-                  <svg key={k} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-                ))}
-              </div>
-              <p className="tcard-quote">"{t.quote}"</p>
-              <div className="tcard-author">
-                <div className="tcard-avatar" style={t.tint}>{t.initials}</div>
-                <div>
-                  <div className="tcard-name">{t.name}</div>
-                  <div className="tcard-role">{t.role}</div>
-                </div>
-              </div>
-            </article>
+
+        <div className="era-define reveal delay-1">
+          <p className="era-define-name">OpenClaw</p>
+          <p className="era-define-body">
+            Teknologi di balik Nora. Memahami Bahasa Indonesia sehari-hari, membantu lewat
+            WhatsApp dan Notive. Anda ketik, Nora yang mengurus.
+          </p>
+        </div>
+
+        <ul className="era-beats">
+          {beats.map((b, i) => (
+            <li className={`era-beat reveal delay-${Math.min(i, 2)}`} key={b.lead}>
+              <span className="era-beat-lead">{b.lead}</span>
+              <span className="era-beat-detail">{b.detail}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )
@@ -1196,12 +1194,12 @@ function App() {
       <main>
         <Hero />
         <Nora />
+        <OpenClaw />
         <Features />
         <Calculator />
         <TrustBar />
         <Stats />
         <HowItWorks />
-        <Testimonials />
         <Pricing />
         <Faq />
         <Cta />
