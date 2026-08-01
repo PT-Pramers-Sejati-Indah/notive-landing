@@ -906,27 +906,35 @@ function Faq() {
   const items = [
     {
       q: 'Bagaimana Notive memastikan data kantor saya tidak bocor ke kantor lain?',
-      a: 'Setiap kantor punya ruang data sendiri. Saat Anda masuk, Notive hanya menampilkan order dan PIC milik kantor Anda. Kantor lain tidak bisa melihat data Anda, begitu pula sebaliknya.',
+      a: 'Setiap kantor memiliki ruang data sendiri. Semua order, PIC, dan berkas hanya ditampilkan untuk kantor Anda. Kantor lain tidak bisa melihat data Anda, dan sebaliknya.',
     },
     {
       q: 'Apakah dokumen saya disimpan di server Notive?',
-      a: 'Tidak. Berkas tetap di Google Drive kantor Anda. Notive hanya membantu membuat folder per order dan menampilkan nama file. Isi dokumen tidak dipindahkan ke server Notive.',
+      a: 'Tidak. Berkas tetap di Google Shared Drive kantor Anda. Notive membuat folder per order, menampilkan nama file, dan menyimpan koneksi Drive secara terenkripsi. Isi dokumen tidak dipindahkan ke server Notive.',
     },
     {
       q: 'Apakah Nora bisa menghapus atau mengubah data kantor saya?',
-      a: 'Tidak. Nora hanya membantu mencari dan menjelaskan. Ia tidak bisa menambah, mengubah, atau menghapus order maupun berkas. Setiap permintaan seperti itu akan ditolak dengan sopan.',
+      a: 'Di chat dashboard, Nora hanya membaca dan menjelaskan — ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.',
     },
     {
-      q: 'Apa itu laporan bisnis?',
-      a: 'Ringkasan kinerja kantor: berapa order masuk, yang aktif, yang sudah lunas, tren per bulan, serta beban kerja tiap PIC. Anda bisa pilih bulan ini, bulan lalu, 6 bulan terakhir, atau tanggal sendiri.',
+      q: 'Apa itu Analitik Bisnis?',
+      a: 'Dasbor kinerja kantor: total order, order aktif, lunas, non-aktif, tren harian atau bulanan, jenis transaksi hukum, beban kerja PIC, dan PIC tanpa aktivitas. Filter periode: bulan ini, bulan lalu, 6 bulan terakhir, atau tanggal kustom.',
     },
     {
       q: 'Bagaimana cara memindahkan data dari spreadsheet lama kami?',
-      a: 'Gunakan fitur Impor CSV. Unduh template dari Notive, isi dengan data lama (termasuk No. Sertifikat, PIC Bank, dan Progress). Maksimal 3 MB per berkas, dengan laporan baris mana yang gagal agar mudah diperbaiki.',
+      a: 'Gunakan Impor CSV. Pilih PIC untuk semua baris, unduh template, lalu isi data lama (No. Sertifikat, PIC Bank, Progress, status pembayaran). Maksimal 3 MB; baris yang gagal dilaporkan satu per satu agar mudah diperbaiki.',
     },
     {
       q: 'Bagaimana cara berbicara dengan Nora?',
-      a: 'Buka menu Tanya Nora di dashboard, lalu ketik pertanyaan seperti biasa, misalnya "Siapa PIC yang belum menangani order bulan ini?" atau "Berkas apa saja di order Budi Santoso?". Tidak perlu belajar istilah teknis.',
+      a: 'Buka Tanya Nora di dashboard dan tanya dengan bahasa sehari-hari, misalnya "Siapa PIC yang belum menangani order bulan ini?" atau "Berkas apa saja di order Budi Santoso?". Nora juga tersedia via WhatsApp untuk membantu operasi order dan berkas Drive.',
+    },
+    {
+      q: 'Apa bedanya Notaris dan PIC Internal?',
+      a: 'Notaris adalah pemilik/admin kantor (akun pertama yang mendaftar). PIC Internal adalah staf yang ditambahkan dari halaman profil. Keduanya melihat data kantor yang sama; Notaris yang mengundang dan mengelola staf.',
+    },
+    {
+      q: 'Bisakah Notive mengisi form order dari PDF?',
+      a: 'Ya. Saat membuat order baru, gunakan Auto-fill dari PDF. Notive mengekstrak nama klien, nomor sertifikat, PIC Bank, jenis transaksi, tanggal, dan progress. Anda meninjau hasilnya sebelum menyimpan.',
     },
   ]
   return (

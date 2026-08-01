@@ -136,22 +136,28 @@ Setiap paket mencakup data terisolasi per kantor, login aman, dan pembaruan plat
 ## Pertanyaan yang Sering Diajukan (FAQ)
 
 ### Q: Bagaimana Notive memastikan data kantor saya tidak bocor ke kantor lain?
-**A**: Setiap kantor memiliki ruang data terisolasi secara ketat. Notive hanya menampilkan order, berkas, dan PIC milik kantor Anda sendiri.
+**A**: Setiap kantor memiliki ruang data sendiri. Semua order, PIC, dan berkas hanya ditampilkan untuk kantor Anda. Kantor lain tidak bisa melihat data Anda, dan sebaliknya.
 
 ### Q: Apakah dokumen saya disimpan di server Notive?
-**A**: Tidak. Seluruh dokumen dan berkas tetap tersimpan di Google Drive milik kantor Anda. Notive hanya membantu mengorganisir folder per order dan menampilkan metadata nama file.
+**A**: Tidak. Berkas tetap di Google Shared Drive kantor Anda. Notive membuat folder per order, menampilkan nama file, dan menyimpan koneksi Drive secara terenkripsi. Isi dokumen tidak dipindahkan ke server Notive.
 
 ### Q: Apakah Nora bisa menghapus atau mengubah data kantor saya?
-**A**: Tidak. Nora dirancang khusus untuk mencari, mengorganisir, dan menjelaskan data. Nora tidak dapat mengubah atau menghapus data order tanpa persetujuan eksplisit.
+**A**: Di chat dashboard, Nora hanya membaca dan menjelaskan — ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.
 
-### Q: Apa itu laporan bisnis?
-**A**: Laporan bisnis menyajikan ringkasan kinerja operasional kantor: tren order bulanan, status pembayaran, breakdown jenis akta, dan beban kerja masing-masing PIC.
+### Q: Apa itu Analitik Bisnis?
+**A**: Dasbor kinerja kantor: total order, order aktif, lunas, non-aktif, tren harian atau bulanan, jenis transaksi hukum, beban kerja PIC, dan PIC tanpa aktivitas. Filter periode: bulan ini, bulan lalu, 6 bulan terakhir, atau tanggal kustom.
 
 ### Q: Bagaimana cara memindahkan data dari spreadsheet lama kami?
-**A**: Notive menyediakan fitur **Impor CSV**. Anda cukup mengunduh template CSV, mengisi data lama (No. Sertifikat, PIC Bank, Progress), dan mengunggahnya. Sistem akan memberikan laporan validasi jika ada baris yang perlu diperbaiki.
+**A**: Gunakan Impor CSV. Pilih PIC untuk semua baris, unduh template, lalu isi data lama (No. Sertifikat, PIC Bank, Progress, status pembayaran). Maksimal 3 MB; baris yang gagal dilaporkan satu per satu agar mudah diperbaiki.
 
 ### Q: Bagaimana cara berbicara dengan Nora?
-**A**: Anda bisa membuka menu Tanya Nora di dashboard Notive atau berkomunikasi melalui WhatsApp resmi Notive menggunakan bahasa alami sehari-hari.
+**A**: Buka Tanya Nora di dashboard dan tanya dengan bahasa sehari-hari, misalnya "Siapa PIC yang belum menangani order bulan ini?" atau "Berkas apa saja di order Budi Santoso?". Nora juga tersedia via WhatsApp untuk membantu operasi order dan berkas Drive.
+
+### Q: Apa bedanya Notaris dan PIC Internal?
+**A**: Notaris adalah pemilik/admin kantor (akun pertama yang mendaftar). PIC Internal adalah staf yang ditambahkan dari halaman profil. Keduanya melihat data kantor yang sama; Notaris yang mengundang dan mengelola staf.
+
+### Q: Bisakah Notive mengisi form order dari PDF?
+**A**: Ya. Saat membuat order baru, gunakan Auto-fill dari PDF. Notive mengekstrak nama klien, nomor sertifikat, PIC Bank, jenis transaksi, tanggal, dan progress. Anda meninjau hasilnya sebelum menyimpan.
 
 ---
 
