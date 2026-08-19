@@ -34,12 +34,19 @@ function replaceRoot(html, inner) {
   return output
 }
 
+const idr = (n) => `Rp ${Number(n).toLocaleString('id-ID')}`
+const pct = (rate) => {
+  const n = rate * 100
+  return `${Number.isInteger(n) ? String(n) : String(n).replace('.', ',')}%`
+}
+const tax = facts.TAX
+const [honor1, honor2, honor3] = tax.honorTiers
+
 const notFound = `<!doctype html><html lang="id"><head>
 <meta charset="UTF-8" />
 <meta name="robots" content="noindex,nofollow" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Halaman tidak ditemukan - Notive</title>
-<link rel="canonical" href="https://notive.id/404" />
 </head><body>
 <p>Halaman tidak ditemukan.</p>
 <p><a href="/">Kembali ke beranda Notive</a></p>
@@ -88,28 +95,35 @@ const bodies = {
 <p>Kalkulator interaktif ada di <a href="/#kalkulator">beranda Notive</a>.</p>
 <h2>BPHTB dan PPh Final</h2>
 <ul>
-<li>BPHTB 5% dari NPOPKP (pembeli).</li>
-<li>PPh Final 2,5% dari nilai transaksi (penjual).</li>
-<li>NDPP = MAX(nilai transaksi, NJOP). NPOPKP = MAX(0, NDPP − NPOPTKP).</li>
+<li>BPHTB ${pct(tax.bphtbRate)} dari NPOPKP (pembeli).</li>
+<li>PPh Final ${pct(tax.pphRate)} dari nilai transaksi (penjual).</li>
+<li>NDPP = MAX(nilai transaksi, NJOP). NPOPKP = MAX(0, NDPP - NPOPTKP).</li>
 </ul>
 <h2>NPOPTKP</h2>
 <ul>
-<li>Jakarta Rp 80.000.000</li>
-<li>Surabaya, Bandung, Bekasi, Tangerang, wilayah lain Rp 60.000.000</li>
+<li>Jakarta ${idr(tax.noptkpJakarta)}</li>
+<li>Surabaya, Bandung, Bekasi, Tangerang, wilayah lain ${idr(tax.noptkpDefault)}</li>
 </ul>
 <h2>Honorarium notaris (Pasal 36 UUJN)</h2>
 <table>
 <thead><tr><th>Nilai ekonomis</th><th>Tarif maksimum</th></tr></thead>
 <tbody>
-<tr><td>Sampai Rp 100.000.000</td><td>2,5%</td></tr>
-<tr><td>Di atas Rp 100.000.000 sampai Rp 1.000.000.000</td><td>1,5%</td></tr>
-<tr><td>Di atas Rp 1.000.000.000</td><td>1,0%</td></tr>
+<tr><td>Sampai ${idr(honor1.upTo)}</td><td>${honor1.label}</td></tr>
+<tr><td>Di atas ${idr(honor1.upTo)} sampai ${idr(honor2.upTo)}</td><td>${honor2.label}</td></tr>
+<tr><td>Di atas ${idr(honor2.upTo)}</td><td>${honor3.label}</td></tr>
 </tbody>
 </table>`,
   '/tentang/': `<h1>${facts.PAGES['/tentang/'].h1}</h1>
 <p>${facts.DEFINITION}</p>
-<p>Notive dibuat di Indonesia untuk alur kantor notaris Indonesia. Produk ini menata order dan PIC, memakai Google Drive kantor sebagai tempat berkas, dan menyediakan Nora sebagai asisten berbahasa Indonesia.</p>
-<p>Situs: <a href="https://notive.id/">https://notive.id/</a>. Uji coba: <a href="/register">14 hari gratis</a>.</p>`,
+<h2>Untuk siapa</h2>
+<p>Notive dibuat untuk kantor notaris dan PPAT di Indonesia: notaris perorangan, firma, dan staf PIC yang menata order klien. Produk ini berbahasa Indonesia dan dipakai untuk pekerjaan kantor sehari-hari, bukan untuk mencetak minuta akta.</p>
+<h2>Apa yang dikerjakan</h2>
+<p>Notive menata order Jual Beli, Hak Tanggungan, Hibah, dan transaksi hukum lain; menampilkan beban kerja PIC; menghubungkan berkas ke Google Drive kantor; dan menyediakan Nora untuk pertanyaan dalam Bahasa Indonesia.</p>
+<h2>Berkas</h2>
+<p>${facts.DRIVE_FACT}</p>
+<h2>Perusahaan</h2>
+<p>Dibuat di Indonesia. Situs: <a href="https://notive.id/">https://notive.id/</a>. Uji coba 14 hari tanpa kartu kredit: <a href="/register">daftar di sini</a>.</p>
+<p>Kontak: <a href="https://wa.me/6281384323745">WhatsApp +62 813-8432-3745</a>.</p>`,
   '/kebijakan-privasi/': `<h1>Kebijakan privasi</h1>
 <p>Draf 20 Agustus 2026. Belum ditinjau penasihat hukum. Berlaku untuk notive.id dan dashboard Notive.</p>
 <h2>Data yang diproses</h2>

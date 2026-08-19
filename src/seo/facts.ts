@@ -13,6 +13,22 @@ export const DEFINITION =
 export const DRIVE_FACT =
   'Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat.'
 
+export const HERO_SUB =
+  'Dari pelacakan Jual Beli dan Hak Tanggungan hingga berkas di Google Drive kantor Anda, laporan bisnis, dan Nora, asisten pribadi yang siap membantu dalam Bahasa Indonesia. Notive menggantikan spreadsheet lama untuk lacak order dan PIC.'
+
+export const TAX = {
+  bphtbRate: 0.05,
+  pphRate: 0.025,
+  honorMin: 100_000,
+  noptkpJakarta: 80_000_000,
+  noptkpDefault: 60_000_000,
+  honorTiers: [
+    { upTo: 100_000_000, rate: 0.025, label: '2,5%' },
+    { upTo: 1_000_000_000, rate: 0.015, label: '1,5%' },
+    { upTo: null, rate: 0.01, label: '1,0%' },
+  ],
+} as const
+
 export const PAGES = {
   '/': {
     title: 'Notive - Aplikasi Notaris Indonesia',

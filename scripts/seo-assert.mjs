@@ -76,7 +76,12 @@ for (const page of indexed) {
   need(canonical(html) === expected.canonical, `${page.file} canonical want ${expected.canonical} got ${canonical(html)}`)
   need(meta(html, 'description').toLowerCase().includes(page.descIncludes.toLowerCase()), `${page.file} description missing "${page.descIncludes}"`)
   need(prop(html, 'og:url') === expected.canonical || prop(html, 'og:url') === '', `${page.file} og:url mismatch`)
+  need(prop(html, 'og:image') === 'https://notive.id/og-image.webp', `${page.file} missing og:image`)
 }
+
+need(/classList\.add\(['"]has-js['"]\)/.test(home), 'homepage missing early has-js')
+need(/html\.has-js #root > article/.test(home), 'homepage missing CLS hide for injected article')
+need(!home.includes('\u2014'), 'homepage HTML contains an em dash')
 
 const category = fs.existsSync(path.join(dist, 'aplikasi-notaris-indonesia/index.html'))
   ? read('aplikasi-notaris-indonesia/index.html')
@@ -93,7 +98,19 @@ if (fs.existsSync(path.join(dist, 'register/index.html'))) {
 
 const four = read('404.html')
 need(/noindex/i.test(four), '404.html must be noindex')
+need(!canonical(four), '404.html should omit canonical')
 need(canonical(four) !== 'https://notive.id/', '404.html must not canonical the homepage')
+
+const tentang = fs.existsSync(path.join(dist, 'tentang/index.html')) ? read('tentang/index.html') : ''
+need(/Untuk siapa/i.test(tentang), 'tentang page is still too thin')
+need(/bukan untuk mencetak minuta akta/i.test(tentang), 'tentang page must say Notive is not akta-printing software')
+
+const appSrc = fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8')
+need(
+  /querySelectorAll<HTMLElement>\('\.reveal'\)[\s\S]{0,1600}\[currentPath\]/.test(appSrc),
+  'reveal observer must re-run when currentPath changes',
+)
+need(!/href="#">/.test(appSrc), 'homepage footer still has href="#" placeholders')
 
 const sitemap = fs.existsSync(path.join(dist, 'sitemap.xml')) ? read('sitemap.xml') : ''
 for (const loc of [

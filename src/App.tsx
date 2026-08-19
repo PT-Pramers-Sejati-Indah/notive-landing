@@ -1,8 +1,8 @@
-import { useEffect, useState, type SVGProps } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type SVGProps } from 'react'
 import './App.css'
 import { Calculator } from './Calculator'
 import { Register } from './Register'
-import { DEFINITION, DRIVE_FACT, PAGES } from './seo/facts'
+import { DRIVE_FACT, HERO_SUB, PAGES } from './seo/facts'
 import dashboardPreview from './assets/dashboard-preview.webp'
 import notiveLogo from './assets/notive-logo.png'
 import noraAvatar from './assets/nora-avatar.webp'
@@ -126,7 +126,7 @@ function Hero() {
             )}
           </h1>
           <p className="hero-sub reveal delay-1">
-            {DEFINITION} Notive menggantikan spreadsheet lama untuk lacak order dan PIC.
+            {HERO_SUB}
           </p>
           <div className="hero-actions reveal delay-2">
             <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-hero-primary">
@@ -928,7 +928,7 @@ function Faq() {
     },
     {
       q: 'Apakah Nora bisa menghapus atau mengubah data kantor saya?',
-      a: 'Di chat dashboard, Nora hanya membaca dan menjelaskan — ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.',
+      a: 'Di chat dashboard, Nora hanya membaca dan menjelaskan. Ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.',
     },
     {
       q: 'Apa itu Analitik Bisnis?',
@@ -1037,25 +1037,22 @@ function Footer() {
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Solusi</div>
-            <a href="#">Notaris perorangan</a>
+            <a href="/aplikasi-notaris-indonesia/">Notaris perorangan</a>
             <a href="/aplikasi-notaris-indonesia/">Kantor notaris</a>
-            <a href="#">Firma hukum</a>
-            <a href="#">PPAT</a>
+            <a href="/aplikasi-notaris-indonesia/">Firma hukum</a>
+            <a href="/aplikasi-notaris-indonesia/">PPAT</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Keamanan</div>
-            <a href="#">Data terpisah per kantor</a>
-            <a href="#">Login aman</a>
+            <a href="#faq">Data terpisah per kantor</a>
+            <a href="#faq">Login aman</a>
             <a href="/kebijakan-privasi/">Kebijakan privasi</a>
-            <a href="#">Syarat &amp; ketentuan</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Perusahaan</div>
             <a href="/aplikasi-notaris-indonesia/">Aplikasi notaris</a>
             <a href="/tentang/">Tentang</a>
-            <a href="#">Blog</a>
             <a href="https://wa.me/6281384323745" target="_blank" rel="noopener noreferrer">Hubungi</a>
-            <a href="#">Status</a>
           </div>
         </div>
       </div>
@@ -1074,6 +1071,7 @@ function Footer() {
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [currentPath, setCurrentPath] = useState(() => normalizePathname(window.location.pathname))
+  const returningFromRegister = useRef(false)
 
   useEffect(() => {
     const handleLocationChange = () => {
@@ -1107,37 +1105,51 @@ function App() {
   }, [])
 
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (currentPath === '/register') {
+      returningFromRegister.current = true
+      return
+    }
+
     const root = document.documentElement
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const reveals = Array.from(document.querySelectorAll<HTMLElement>('.reveal'))
+    const fromRegister = returningFromRegister.current
+    returningFromRegister.current = false
 
     if (reduce || typeof IntersectionObserver === 'undefined') {
       reveals.forEach((el) => el.classList.add('in'))
-    } else {
-      // Gate the entrance state only once JS is confirmed running, so the
-      // content is visible by default for no-JS / headless renders.
-      root.classList.add('js-reveal')
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add('in')
-              obs.unobserve(e.target)
-            }
-          })
-        },
-        { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
-      )
-      reveals.forEach((el) => obs.observe(el))
-      // Safety net: never leave a section hidden if the observer never fires.
-      const fallback = window.setTimeout(() => reveals.forEach((el) => el.classList.add('in')), 2500)
-      return () => {
-        obs.disconnect()
-        window.clearTimeout(fallback)
-      }
+      return
     }
-  }, [])
+
+    // Returning from /register remounts homepage sections without .in. If
+    // html.js-reveal is already on (or this document started on /register),
+    // CSS would keep them at opacity 0 unless we show them before paint.
+    const alreadyGated = root.classList.contains('js-reveal')
+    root.classList.add('js-reveal')
+    if (alreadyGated || fromRegister) {
+      reveals.forEach((el) => el.classList.add('in'))
+      return
+    }
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in')
+            obs.unobserve(e.target)
+          }
+        })
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }
+    )
+    reveals.forEach((el) => obs.observe(el))
+    const fallback = window.setTimeout(() => reveals.forEach((el) => el.classList.add('in')), 2500)
+    return () => {
+      obs.disconnect()
+      window.clearTimeout(fallback)
+    }
+  }, [currentPath])
 
   useEffect(() => {
     const nav = document.querySelector('nav')
@@ -1149,7 +1161,7 @@ function App() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [currentPath])
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { TAX } from './seo/facts'
 
 /* ============================================================
    Kalkulator Notaris — client-side, no API (PRD v1.0)
@@ -6,12 +7,12 @@ import { useMemo, useState } from 'react'
 
 
 const REGIONS: { id: string; label: string; noptkp: number }[] = [
-  { id: 'jakarta', label: 'Jakarta', noptkp: 80_000_000 },
-  { id: 'surabaya', label: 'Surabaya', noptkp: 60_000_000 },
-  { id: 'bandung', label: 'Bandung', noptkp: 60_000_000 },
-  { id: 'bekasi', label: 'Bekasi', noptkp: 60_000_000 },
-  { id: 'tangerang', label: 'Tangerang', noptkp: 60_000_000 },
-  { id: 'default', label: 'Wilayah lain (default nasional)', noptkp: 60_000_000 },
+  { id: 'jakarta', label: 'Jakarta', noptkp: TAX.noptkpJakarta },
+  { id: 'surabaya', label: 'Surabaya', noptkp: TAX.noptkpDefault },
+  { id: 'bandung', label: 'Bandung', noptkp: TAX.noptkpDefault },
+  { id: 'bekasi', label: 'Bekasi', noptkp: TAX.noptkpDefault },
+  { id: 'tangerang', label: 'Tangerang', noptkp: TAX.noptkpDefault },
+  { id: 'default', label: 'Wilayah lain (default nasional)', noptkp: TAX.noptkpDefault },
 ]
 
 const AKTA_TYPES = [
@@ -23,9 +24,9 @@ const AKTA_TYPES = [
   'Akta Lainnya',
 ] as const
 
-const BPHTB_RATE = 0.05
-const PPH_RATE = 0.025
-const HONOR_MIN = 100_000
+const BPHTB_RATE = TAX.bphtbRate
+const PPH_RATE = TAX.pphRate
+const HONOR_MIN = TAX.honorMin
 /** Max 15 digits — keeps UI readable and within Number precision. */
 const MAX_RUPIAH = 999_999_999_999_999
 const MAX_RUPIAH_DIGITS = 15
@@ -60,21 +61,18 @@ function calcHonorarium(value: number) {
   if (value <= 0) return 0
   if (value < HONOR_MIN) return HONOR_MIN
 
-  const tier1 = 100_000_000
-  const tier2 = 1_000_000_000
+  const [tier1, tier2, tier3] = TAX.honorTiers
+  const cap1 = tier1.upTo
+  const cap2 = tier2.upTo
+  if (cap1 == null || cap2 == null) return HONOR_MIN
 
-  if (value <= tier1) return value * 0.025
+  if (value <= cap1) return value * tier1.rate
 
-  if (value <= tier2) {
-    const bracket1 = tier1 * 0.025
-    const bracket2 = (value - tier1) * 0.015
-    return bracket1 + bracket2
+  if (value <= cap2) {
+    return cap1 * tier1.rate + (value - cap1) * tier2.rate
   }
 
-  const bracket1 = tier1 * 0.025
-  const bracket2 = 900_000_000 * 0.015
-  const bracket3 = (value - tier2) * 0.01
-  return bracket1 + bracket2 + bracket3
+  return cap1 * tier1.rate + (cap2 - cap1) * tier2.rate + (value - cap2) * tier3.rate
 }
 
 type RupiahFieldProps = {
@@ -147,7 +145,7 @@ function TaxCalculator() {
   const [txValue, setTxValue] = useState(800_000_000)
   const [njop, setNjop] = useState(750_000_000)
   const [regionId, setRegionId] = useState('jakarta')
-  const [noptkp, setNoptkp] = useState(80_000_000)
+  const [noptkp, setNoptkp] = useState<number>(TAX.noptkpJakarta)
   const [noptkpManual, setNoptkpManual] = useState(false)
 
   const region = REGIONS.find((r) => r.id === regionId) ?? REGIONS[5]

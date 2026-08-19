@@ -8,6 +8,19 @@
   },
   "DEFINITION": "Notive adalah aplikasi manajemen order untuk kantor notaris Indonesia. Notaris memakai Notive untuk menata order Jual Beli, Hak Tanggungan, Hibah, dan transaksi hukum lain, dengan berkas yang tetap di Google Drive kantor (My Drive atau Shared Drive), plus Nora, asisten AI berbahasa Indonesia.",
   "DRIVE_FACT": "Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat.",
+  "HERO_SUB": "Dari pelacakan Jual Beli dan Hak Tanggungan hingga berkas di Google Drive kantor Anda, laporan bisnis, dan Nora, asisten pribadi yang siap membantu dalam Bahasa Indonesia. Notive menggantikan spreadsheet lama untuk lacak order dan PIC.",
+  "TAX": {
+    "bphtbRate": 0.05,
+    "pphRate": 0.025,
+    "honorMin": 100000,
+    "noptkpJakarta": 80000000,
+    "noptkpDefault": 60000000,
+    "honorTiers": [
+      { "upTo": 100000000, "rate": 0.025, "label": "2,5%" },
+      { "upTo": 1000000000, "rate": 0.015, "label": "1,5%" },
+      { "upTo": null, "rate": 0.01, "label": "1,0%" }
+    ]
+  },
   "PAGES": {
     "/": {
       "title": "Notive - Aplikasi Notaris Indonesia",

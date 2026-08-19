@@ -42,7 +42,7 @@ Pelajari lebih lanjut di halaman [aplikasi notaris Indonesia](https://notive.id/
 - Notive mengekstrak data penting secara otomatis: Nama Klien, No. Sertifikat, PIC Bank, jenis transaksi, dan mencocokkan PIC Internal.
 - Menghemat waktu entri data dan mengurangi risiko kesalahan pengetikan.
 
-### 5. Nora — Asisten Personal AI Kantor Notaris
+### 5. Nora: Asisten Personal AI Kantor Notaris
 - Asisten berbasis AI yang ditenagai oleh teknologi **OpenClaw**, siap membantu dalam Bahasa Indonesia.
 - Chat langsung via dashboard Notive atau WhatsApp.
 - **Kemampuan Nora**:
@@ -113,7 +113,7 @@ Sesuai **Pasal 36 UU Jabatan Notaris**, honorarium notaris dihitung secara progr
 
 Setiap paket mencakup data terisolasi per kantor, login aman, dan pembaruan platform berkala. Uji coba 14 hari gratis tanpa kartu kredit.
 
-### 1. Basic — Rp 125.000 / bulan
+### 1. Basic: Rp 125.000 / bulan
 - Untuk notaris perorangan yang ingin mulai rapi tanpa ribet.
 - Hingga 100 order aktif
 - 5 PIC internal
@@ -121,7 +121,7 @@ Setiap paket mencakup data terisolasi per kantor, login aman, dan pembaruan plat
 - Nora via WhatsApp (300 pertanyaan/bulan)
 - Dukungan via email
 
-### 2. Pro (Paling Populer) — Rp 499.000 / bulan
+### 2. Pro (Paling Populer): Rp 499.000 / bulan
 - Untuk kantor notaris aktif yang butuh kapasitas penuh.
 - Order tidak terbatas
 - PIC / staf tidak terbatas
@@ -130,7 +130,7 @@ Setiap paket mencakup data terisolasi per kantor, login aman, dan pembaruan plat
 - Laporan bisnis & analitik lengkap
 - Dukungan prioritas
 
-### 3. Firma — Sesuai Kebutuhan
+### 3. Firma: Sesuai Kebutuhan
 - Untuk jaringan kantor atau firma hukum.
 - Semua kemampuan paket Pro
 - Konfigurasi khusus & integrasi khusus sesuai permintaan
@@ -148,7 +148,7 @@ Setiap paket mencakup data terisolasi per kantor, login aman, dan pembaruan plat
 **A**: Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat. Notive membuat folder per order, menampilkan nama file, dan menyimpan koneksi Drive secara terenkripsi.
 
 ### Q: Apakah Nora bisa menghapus atau mengubah data kantor saya?
-**A**: Di chat dashboard, Nora hanya membaca dan menjelaskan — ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.
+**A**: Di chat dashboard, Nora hanya membaca dan menjelaskan. Ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.
 
 ### Q: Apa itu Analitik Bisnis?
 **A**: Dasbor kinerja kantor: total order, order aktif, lunas, non-aktif, tren harian atau bulanan, jenis transaksi hukum, beban kerja PIC, dan PIC tanpa aktivitas. Filter periode: bulan ini, bulan lalu, 6 bulan terakhir, atau tanggal kustom.
