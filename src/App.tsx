@@ -1087,14 +1087,29 @@ function App() {
     const handleLinkClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a')
       if (!target) return
-      
+
       const href = target.getAttribute('href')
-      const targetAttr = target.getAttribute('target')
-      const pathname = href ? normalizePathname(new URL(href, window.location.href).pathname) : ''
-      if (href && targetAttr !== '_blank' && (pathname === '/register' || pathname === '/')) {
-        e.preventDefault()
-        window.history.pushState({}, '', href)
-        setCurrentPath(pathname)
+      if (!href || target.getAttribute('target') === '_blank') return
+      // In-page section links must keep native hash scrolling.
+      if (href.startsWith('#')) return
+
+      let url: URL
+      try {
+        url = new URL(href, window.location.href)
+      } catch {
+        return
+      }
+      if (url.origin !== window.location.origin) return
+
+      const pathname = normalizePathname(url.pathname)
+      if (pathname !== '/register' && pathname !== '/') return
+      // Already on this path: leave hashes such as /#kalkulator to the browser.
+      if (pathname === normalizePathname(window.location.pathname)) return
+
+      e.preventDefault()
+      window.history.pushState({}, '', href)
+      setCurrentPath(pathname)
+      if (!url.hash) {
         window.scrollTo({ top: 0, behavior: 'instant' })
       }
     }
@@ -1103,6 +1118,17 @@ function App() {
       window.removeEventListener('click', handleLinkClick)
     }
   }, [])
+
+  useLayoutEffect(() => {
+    if (currentPath !== '/') return
+    const { hash } = window.location
+    if (!hash) return
+    try {
+      document.querySelector(hash)?.scrollIntoView()
+    } catch {
+      /* invalid fragment */
+    }
+  }, [currentPath])
 
 
   useLayoutEffect(() => {
