@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <link rel="canonical" href="{{CANONICAL}}" />
+    {{ROBOTS}}
+    <meta property="og:title" content="{{TITLE}}" />
+    <meta property="og:description" content="{{DESCRIPTION}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:url" content="{{CANONICAL}}" />
+    <meta property="og:site_name" content="Notive" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="{{CSS}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Spectral:wght@600;700&display=swap" rel="stylesheet" />
+    <style>
+      .page-prose { max-width: 72ch; margin: 0 auto; padding: 6rem 1.25rem 4rem; }
+      .page-prose h1 { font-family: Spectral, serif; font-size: clamp(1.75rem, 3vw, 2.5rem); text-wrap: balance; }
+      .page-prose h2 { margin-top: 2.25rem; text-wrap: balance; }
+      .page-prose p, .page-prose li { line-height: 1.65; }
+      .page-prose table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+      .page-prose th, .page-prose td { border: 1px solid #d9dee8; padding: 0.6rem 0.7rem; text-align: left; vertical-align: top; }
+      .seo-nav, .seo-foot { max-width: 72ch; margin: 0 auto; padding: 1rem 1.25rem; }
+    </style>
+  </head>
+  <body>
+    <nav class="seo-nav" aria-label="Navigasi utama">
+      <a href="/">Notive</a>
+      · <a href="/aplikasi-notaris-indonesia/">Aplikasi notaris</a>
+      · <a href="/kalkulator-bphtb/">Kalkulator</a>
+      · <a href="/tentang/">Tentang</a>
+      · <a href="/register">Coba 14 hari</a>
+    </nav>
+    <main class="page-prose">{{BODY}}</main>
+    <footer class="seo-foot">
+      <p>© 2026 Notive. Bukan pengganti nasihat hukum profesional.</p>
+    </footer>
+  </body>
+</html>

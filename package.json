@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && cp dist/index.html dist/404.html",
+    "build": "tsc -b && vite build && node scripts/write-static-pages.mjs && node scripts/seo-assert.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "test:seo": "node scripts/seo-assert.mjs"
