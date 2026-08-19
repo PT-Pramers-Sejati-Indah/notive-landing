@@ -6,6 +6,9 @@ node_modules
 # Testing
 coverage
 
+# Git worktrees
+.worktrees
+
 # Production Build
 dist
 dist-ssr
