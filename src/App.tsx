@@ -935,6 +935,10 @@ function Faq() {
       q: 'Bisakah Notive mengisi form order dari PDF?',
       a: 'Ya. Saat membuat order baru, gunakan Auto-fill dari PDF. Notive mengekstrak nama klien, nomor sertifikat, PIC Bank, jenis transaksi, tanggal, dan progress. Anda meninjau hasilnya sebelum menyimpan.',
     },
+    {
+      q: 'Apa itu aplikasi notaris Indonesia, dan apakah Notive termasuk?',
+      a: 'Aplikasi notaris Indonesia adalah perangkat lunak untuk operasional kantor notaris. Notive termasuk sebagai aplikasi manajemen order, bukan software cetak minuta akta. Berkas tetap di Google Drive kantor (My Drive atau Shared Drive).',
+    },
   ]
   return (
     <section id="faq" className="faq-section">
