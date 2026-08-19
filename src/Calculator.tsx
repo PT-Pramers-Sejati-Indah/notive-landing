@@ -296,7 +296,8 @@ export function Calculator() {
           </h2>
           <p className="section-body reveal delay-1 centered">
             Hitung BPHTB, PPh Final, dan honorarium notaris sebelum transaksi. Gratis, tanpa login,
-            berdasarkan peraturan yang berlaku per Juni 2026.
+            berdasarkan peraturan yang berlaku per Juni 2026.{' '}
+            <a href="/kalkulator-bphtb/">Penjelasan rumus BPHTB</a>
           </p>
         </div>
 

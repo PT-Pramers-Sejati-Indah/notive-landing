@@ -1037,7 +1037,7 @@ function Footer() {
           <div className="footer-col">
             <div className="footer-col-title">Solusi</div>
             <a href="#">Notaris perorangan</a>
-            <a href="#">Kantor notaris</a>
+            <a href="/aplikasi-notaris-indonesia/">Kantor notaris</a>
             <a href="#">Firma hukum</a>
             <a href="#">PPAT</a>
           </div>
@@ -1045,14 +1045,15 @@ function Footer() {
             <div className="footer-col-title">Keamanan</div>
             <a href="#">Data terpisah per kantor</a>
             <a href="#">Login aman</a>
-            <a href="#">Kebijakan privasi</a>
+            <a href="/kebijakan-privasi/">Kebijakan privasi</a>
             <a href="#">Syarat &amp; ketentuan</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Perusahaan</div>
-            <a href="#">Tentang</a>
+            <a href="/aplikasi-notaris-indonesia/">Aplikasi notaris</a>
+            <a href="/tentang/">Tentang</a>
             <a href="#">Blog</a>
-            <a href="#">Hubungi</a>
+            <a href="https://wa.me/6281384323745" target="_blank" rel="noopener noreferrer">Hubungi</a>
             <a href="#">Status</a>
           </div>
         </div>
