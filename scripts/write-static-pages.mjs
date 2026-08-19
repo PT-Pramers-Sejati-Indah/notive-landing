@@ -38,7 +38,7 @@ const notFound = `<!doctype html><html lang="id"><head>
 <meta charset="UTF-8" />
 <meta name="robots" content="noindex,nofollow" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Halaman tidak ditemukan — Notive</title>
+<title>Halaman tidak ditemukan - Notive</title>
 <link rel="canonical" href="https://notive.id/404" />
 </head><body>
 <p>Halaman tidak ditemukan.</p>
@@ -124,11 +124,8 @@ const bodies = {
 }
 
 for (const [route, body] of Object.entries(bodies)) {
-  const page = facts.PAGES[route] || {
-    title: 'Kebijakan Privasi — Notive',
-    description: 'Bagaimana Notive menangani data kantor notaris dan Google Drive.',
-    canonical: `${facts.ORIGIN}${route}`,
-  }
+  const page = facts.PAGES[route]
+  if (!page) throw new Error(`missing metadata for ${route}`)
   const robots = route === '/kebijakan-privasi/'
     ? '<meta name="robots" content="noindex,follow" />'
     : ''
