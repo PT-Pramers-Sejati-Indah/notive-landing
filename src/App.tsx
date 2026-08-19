@@ -2,6 +2,7 @@ import { useEffect, useState, type SVGProps } from 'react'
 import './App.css'
 import { Calculator } from './Calculator'
 import { Register } from './Register'
+import { DEFINITION, DRIVE_FACT } from './seo/facts'
 import dashboardPreview from './assets/dashboard-preview.webp'
 import notiveLogo from './assets/notive-logo.png'
 import noraAvatar from './assets/nora-avatar.webp'
@@ -107,12 +108,10 @@ function Hero() {
       <div className="hero">
         <div className="hero-copy">
           <h1 className="hero-title reveal">
-            Kelola seluruh order kantor notaris <span className="hero-accent">dalam satu tempat</span>
+            Notive: aplikasi notaris dengan berkas yang tetap di <span className="hero-accent">Google Drive kantor</span>
           </h1>
           <p className="hero-sub reveal delay-1">
-            Dari pelacakan Jual Beli dan Hak Tanggungan hingga berkas di Google Drive kantor Anda,
-            laporan bisnis, dan Nora, asisten pribadi yang siap membantu dalam Bahasa Indonesia.
-            Notive menggantikan spreadsheet lama tanpa pernah menyimpan dokumen Anda.
+            {DEFINITION} Notive menggantikan spreadsheet lama untuk lacak order dan PIC.
           </p>
           <div className="hero-actions reveal delay-2">
             <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-hero-primary">
@@ -201,7 +200,7 @@ const FEATURES: Feature[] = [
   {
     id: 'drive',
     title: 'Berkas di Google Drive kantor Anda',
-    body: 'Hubungkan Google Drive kantor. Notive membuat folder per order otomatis. Dokumen tetap milik Anda; Notive tidak menyimpan atau menguasai berkas.',
+    body: DRIVE_FACT,
     icon: <IconFolder size={16} />,
     preview: <PreviewDrive />,
   },
@@ -910,7 +909,7 @@ function Faq() {
     },
     {
       q: 'Apakah dokumen saya disimpan di server Notive?',
-      a: 'Tidak. Berkas tetap di Google Shared Drive kantor Anda. Notive membuat folder per order, menampilkan nama file, dan menyimpan koneksi Drive secara terenkripsi. Isi dokumen tidak dipindahkan ke server Notive.',
+      a: DRIVE_FACT,
     },
     {
       q: 'Apakah Nora bisa menghapus atau mengubah data kantor saya?',
