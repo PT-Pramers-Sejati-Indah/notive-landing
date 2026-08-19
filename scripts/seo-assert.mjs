@@ -1,10 +1,20 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const dist = path.resolve('dist')
-const read = (p) => fs.readFileSync(path.join(dist, p), 'utf8')
 const failures = []
 const need = (cond, msg) => { if (!cond) failures.push(msg) }
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
+const dist = path.join(root, 'dist')
+const facts = JSON.parse(fs.readFileSync(path.join(root, 'scripts/facts.json'), 'utf8'))
+const read = (p) => {
+  const full = path.join(dist, p)
+  if (!fs.existsSync(full)) {
+    failures.push(`missing dist/${p}`)
+    return ''
+  }
+  return fs.readFileSync(full, 'utf8')
+}
 
 function meta(html, name) {
   const m = html.match(new RegExp(`<meta\\s+name="${name}"\\s+content="([^"]*)"`, 'i'))
@@ -35,27 +45,23 @@ need(/notive-logo\.svg/.test(home), 'Organization logo is not the SVG')
 
 const indexed = [
   {
+    route: '/',
     file: 'index.html',
-    titleIncludes: 'Notive',
-    canonical: 'https://notive.id/',
     descIncludes: 'notaris',
   },
   {
+    route: '/aplikasi-notaris-indonesia/',
     file: 'aplikasi-notaris-indonesia/index.html',
-    titleIncludes: 'Aplikasi Notaris Indonesia',
-    canonical: 'https://notive.id/aplikasi-notaris-indonesia/',
     descIncludes: 'aplikasi notaris',
   },
   {
+    route: '/kalkulator-bphtb/',
     file: 'kalkulator-bphtb/index.html',
-    titleIncludes: 'Kalkulator BPHTB',
-    canonical: 'https://notive.id/kalkulator-bphtb/',
     descIncludes: 'BPHTB',
   },
   {
+    route: '/tentang/',
     file: 'tentang/index.html',
-    titleIncludes: 'Tentang Notive',
-    canonical: 'https://notive.id/tentang/',
     descIncludes: 'Notive',
   },
 ]
@@ -65,10 +71,11 @@ for (const page of indexed) {
   need(fs.existsSync(full), `missing dist/${page.file}`)
   if (!fs.existsSync(full)) continue
   const html = read(page.file)
-  need(title(html).includes(page.titleIncludes), `${page.file} title missing "${page.titleIncludes}" (got: ${title(html)})`)
-  need(canonical(html) === page.canonical, `${page.file} canonical want ${page.canonical} got ${canonical(html)}`)
+  const expected = facts.PAGES[page.route]
+  need(title(html) === expected.title, `${page.file} title want "${expected.title}" got "${title(html)}"`)
+  need(canonical(html) === expected.canonical, `${page.file} canonical want ${expected.canonical} got ${canonical(html)}`)
   need(meta(html, 'description').toLowerCase().includes(page.descIncludes.toLowerCase()), `${page.file} description missing "${page.descIncludes}"`)
-  need(prop(html, 'og:url') === page.canonical || prop(html, 'og:url') === '', `${page.file} og:url mismatch`)
+  need(prop(html, 'og:url') === expected.canonical || prop(html, 'og:url') === '', `${page.file} og:url mismatch`)
 }
 
 const category = fs.existsSync(path.join(dist, 'aplikasi-notaris-indonesia/index.html'))
@@ -81,9 +88,9 @@ need(fs.existsSync(path.join(dist, 'register/index.html')), 'missing dist/regist
 if (fs.existsSync(path.join(dist, 'register/index.html'))) {
   const reg = read('register/index.html')
   need(/noindex/i.test(reg), 'register must be noindex')
+  need(/<div\b(?=[^>]*\bid=(['"])root\1)[^>]*>\s*<\/div>/i.test(reg), 'register #root must be empty for the client-rendered form')
 }
 
-need(fs.existsSync(path.join(dist, '404.html')), 'missing dist/404.html')
 const four = read('404.html')
 need(/noindex/i.test(four), '404.html must be noindex')
 need(canonical(four) !== 'https://notive.id/', '404.html must not canonical the homepage')

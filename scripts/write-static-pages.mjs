@@ -151,33 +151,17 @@ const spa = builtIndex
 fs.mkdirSync(path.join(dist, 'register'), { recursive: true })
 fs.writeFileSync(path.join(dist, 'register/index.html'), spa)
 
+const sitemapDate = new Date().toISOString().slice(0, 10)
+const sitemapUrls = Object.entries(facts.PAGES)
+  .filter(([route]) => route !== '/kebijakan-privasi/')
+  .map(([route, page]) => `  <url>
+    <loc>${page.canonical}</loc>
+    <lastmod>${sitemapDate}</lastmod>
+  </url>`)
+  .join('\n')
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://notive.id/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://notive.id/aplikasi-notaris-indonesia/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://notive.id/kalkulator-bphtb/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://notive.id/tentang/</loc>
-    <lastmod>2026-08-20</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+${sitemapUrls}
 </urlset>
 `
-fs.writeFileSync(path.join(root, 'public', 'sitemap.xml'), sitemap)
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap)

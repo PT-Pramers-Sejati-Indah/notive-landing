@@ -12,6 +12,7 @@ import noraAvatar from './assets/nora-avatar.webp'
    Inline SVG so we keep zero extra deps.
 ============================================================ */
 type IconProps = SVGProps<SVGSVGElement> & { size?: number }
+const normalizePathname = (pathname: string) => pathname.replace(/\/+$/, '') || '/'
 const I = ({ size = 16, ...rest }: IconProps) => ({
   width: size,
   height: size,
@@ -1072,11 +1073,11 @@ function Footer() {
 
 function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [currentPath, setCurrentPath] = useState(window.location.pathname)
+  const [currentPath, setCurrentPath] = useState(() => normalizePathname(window.location.pathname))
 
   useEffect(() => {
     const handleLocationChange = () => {
-      setCurrentPath(window.location.pathname)
+      setCurrentPath(normalizePathname(window.location.pathname))
     }
     window.addEventListener('popstate', handleLocationChange)
     return () => {
@@ -1091,10 +1092,11 @@ function App() {
       
       const href = target.getAttribute('href')
       const targetAttr = target.getAttribute('target')
-      if (href && targetAttr !== '_blank' && (href === '/register' || href === '/')) {
+      const pathname = href ? normalizePathname(new URL(href, window.location.href).pathname) : ''
+      if (href && targetAttr !== '_blank' && (pathname === '/register' || pathname === '/')) {
         e.preventDefault()
         window.history.pushState({}, '', href)
-        setCurrentPath(href)
+        setCurrentPath(pathname)
         window.scrollTo({ top: 0, behavior: 'instant' })
       }
     }
