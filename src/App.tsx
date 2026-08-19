@@ -2,7 +2,7 @@ import { useEffect, useState, type SVGProps } from 'react'
 import './App.css'
 import { Calculator } from './Calculator'
 import { Register } from './Register'
-import { DEFINITION, DRIVE_FACT } from './seo/facts'
+import { DEFINITION, DRIVE_FACT, PAGES } from './seo/facts'
 import dashboardPreview from './assets/dashboard-preview.webp'
 import notiveLogo from './assets/notive-logo.png'
 import noraAvatar from './assets/nora-avatar.webp'
@@ -103,12 +103,26 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
 }
 
 function Hero() {
+  const h1 = PAGES['/'].h1
+  const accent = 'Google Drive kantor'
+  const accentAt = h1.indexOf(accent)
+  const h1Before = accentAt >= 0 ? h1.slice(0, accentAt) : h1
+  const h1After = accentAt >= 0 ? h1.slice(accentAt + accent.length) : ''
+
   return (
     <section id="top" className="hero-section">
       <div className="hero">
         <div className="hero-copy">
           <h1 className="hero-title reveal">
-            Notive: aplikasi notaris dengan berkas yang tetap di <span className="hero-accent">Google Drive kantor</span>
+            {accentAt >= 0 ? (
+              <>
+                {h1Before}
+                <span className="hero-accent">{accent}</span>
+                {h1After}
+              </>
+            ) : (
+              h1
+            )}
           </h1>
           <p className="hero-sub reveal delay-1">
             {DEFINITION} Notive menggantikan spreadsheet lama untuk lacak order dan PIC.
