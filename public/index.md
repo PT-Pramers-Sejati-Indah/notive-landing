@@ -1,5 +1,11 @@
 # Notive: Platform Manajemen Order Kantor Notaris Indonesia
 
+Notive adalah aplikasi manajemen order untuk kantor notaris Indonesia. Notaris memakai Notive untuk menata order Jual Beli, Hak Tanggungan, Hibah, dan transaksi hukum lain, dengan berkas yang tetap di Google Drive kantor (My Drive atau Shared Drive), plus Nora, asisten AI berbahasa Indonesia.
+
+Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat.
+
+Pelajari lebih lanjut di halaman [aplikasi notaris Indonesia](https://notive.id/aplikasi-notaris-indonesia/).
+
 > Notive adalah platform manajemen order untuk kantor notaris di Indonesia: pelacakan order dan PIC, folder berkas di Google Drive kantor Anda, laporan beban kerja bisnis, serta Nora (asisten AI pribadi via chat/WhatsApp).
 
 ---
@@ -23,7 +29,7 @@
 ### 2. Berkas Tetap di Google Drive Kantor Anda
 - Integrasi langsung dengan Google Drive kantor notaris.
 - Notive membuat folder otomatis per order.
-- Dokumen dan berkas tetap milik kantor; Notive **tidak menyimpan atau menguasai isi dokumen**.
+- Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat.
 
 ### 3. Laporan Bisnis Kantor & Analitik
 - Pantau statistik operasional: jumlah order masuk, order aktif, order lunas, dan non-aktif.
@@ -139,7 +145,7 @@ Setiap paket mencakup data terisolasi per kantor, login aman, dan pembaruan plat
 **A**: Setiap kantor memiliki ruang data sendiri. Semua order, PIC, dan berkas hanya ditampilkan untuk kantor Anda. Kantor lain tidak bisa melihat data Anda, dan sebaliknya.
 
 ### Q: Apakah dokumen saya disimpan di server Notive?
-**A**: Tidak. Berkas tetap di Google Shared Drive kantor Anda. Notive membuat folder per order, menampilkan nama file, dan menyimpan koneksi Drive secara terenkripsi. Isi dokumen tidak dipindahkan ke server Notive.
+**A**: Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat. Notive membuat folder per order, menampilkan nama file, dan menyimpan koneksi Drive secara terenkripsi.
 
 ### Q: Apakah Nora bisa menghapus atau mengubah data kantor saya?
 **A**: Di chat dashboard, Nora hanya membaca dan menjelaskan — ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora bisa membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login.
