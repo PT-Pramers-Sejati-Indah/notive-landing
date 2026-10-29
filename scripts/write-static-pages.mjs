@@ -165,6 +165,67 @@ const spa = builtIndex
 fs.mkdirSync(path.join(dist, 'register'), { recursive: true })
 fs.writeFileSync(path.join(dist, 'register/index.html'), spa)
 
+const privacyTitle = 'Kebijakan Privasi Notive'
+const privacyDescription = 'Kebijakan privasi Notive: pelacakan order, Nora, Google Drive kantor, laporan kantor, dan add-on Notive Format Berkas.'
+const privacyCanonical = 'https://notive.id/privacy'
+const privacyArticle = `<article>
+  <h1>Kebijakan privasi Notive</h1>
+  <p>Terakhir diperbarui 29 Oktober 2026.</p>
+  <p>Di Notive, yang dapat diakses di notive.id, privasi pengunjung dan pelanggan adalah prioritas. Kebijakan ini menjelaskan informasi yang Notive kumpulkan dan cara pemakaiannya, untuk pelacakan order, Nora, Google Drive kantor, laporan, situs, dashboard, dan add-on Google Docs Notive Format Berkas.</p>
+  <h2>Persetujuan</h2>
+  <p>Dengan memakai situs notive.id, dashboard, Nora, atau add-on Notive Format Berkas, Anda menyetujui kebijakan ini. Kebijakan ini berlaku untuk layanan online Notive dan tidak berlaku untuk berkas kertas yang kantor simpan di luar Notive.</p>
+  <h2>Informasi yang dikumpulkan</h2>
+  <p>Saat Notive meminta data, alasan permintaan dijelaskan di formulir atau di fitur yang sedang dipakai. Jika Anda menghubungi Notive, kami dapat menerima nama, email, nomor telepon, isi pesan, dan lampiran. Saat mendaftar, kami meminta nama, email, nomor WhatsApp, dan kata sandi.</p>
+  <h2>Pelacakan order</h2>
+  <p>Notive memproses nama, email, nomor WhatsApp, dan kata sandi akun yang Anda daftarkan. Formulir daftar memakai Cloudflare Turnstile untuk menahan pendaftaran otomatis.</p>
+  <p>Notive menyimpan order yang kantor Anda isi atau impor: nama klien, nomor sertifikat, PIC Bank, jenis transaksi, tanggal, progress, status pembayaran, dan PIC yang menangani. Impor CSV membawa data order dari spreadsheet lama. Saat Anda meminta isi formulir dari PDF, Notive membaca PDF itu untuk mengusulkan isian, dan Anda meninjau hasilnya sebelum menyimpan.</p>
+  <p>Setiap kantor memiliki ruang data sendiri. Kantor lain tidak dapat melihat order, PIC, atau berkas Anda.</p>
+  <h2>Google Drive</h2>
+  <p>Berkas tetap di Google Drive kantor Anda (My Drive atau Shared Drive). Drive kantor adalah tempat penyimpanan. File melewati Notive hanya untuk pemrosesan yang Anda minta, misalnya unggah folder, isi form dari PDF, atau lampiran chat. Notive menampilkan nama file dan menghubungkan folder ke order. Notive bukan arsip jangka panjang berkas.</p>
+  <h2>Nora</h2>
+  <p>Di chat dashboard, Nora hanya membaca dan menjelaskan. Ia tidak menambah, mengubah, atau menghapus order. Via WhatsApp, Nora dapat membantu operasi order dan mengunggah berkas ke folder Drive jika Anda meminta dengan jelas, dengan batasan yang sama seperti staf yang login. Jika Anda meminta, Nora dapat menyimpan pengingat di Google Calendar Anda.</p>
+  <h2>Laporan kantor</h2>
+  <p>Laporan bisnis dihitung dari order kantor Anda: jumlah order, order aktif, yang sudah lunas, tren, jenis transaksi, dan beban kerja PIC. Laporan ini untuk kantor Anda, bukan untuk iklan.</p>
+  <h2>Add-on Format Berkas</h2>
+  <p>Ketentuan ini hanya untuk add-on Google Docs, dan lebih sempit daripada dashboard. Add-on hanya membaca dan mengubah Google Doc tempat add-on dijalankan (izin documents.currentonly), dan hanya saat Anda menekan tombol atau menu. Add-on tidak dapat membuka dokumen atau file Drive lain.</p>
+  <p>Saat Anda masuk, email dan kata sandi Notive dikirim lewat HTTPS ke server Notive (izin script.external_request) hanya untuk memeriksa akun dan masa langganan. Kata sandi tidak disimpan oleh add-on. Penyimpanan pengaturan Google Apps Script per pengguna menyimpan nama Anda di Notive, tanggal berakhirnya login, dan pengaturan add-on.</p>
+  <p>Isi akta dan dokumen di Google Doc yang sedang dibuka tidak pernah dikirim ke Notive atau pihak ketiga mana pun. Add-on tidak memakai analitik, iklan, atau pelacakan. Setelah login, add-on tidak menghubungi Notive lagi sampai login berakhir.</p>
+  <h2>Cara pemakaian</h2>
+  <p>Notive memakai informasi itu untuk menjalankan layanan, memeriksa akun dan langganan, memproses berkas hanya saat Anda meminta, menjawab pesan, menahan penyalahgunaan, dan memahami penggunaan situs bila analitik diaktifkan.</p>
+  <h2>Log</h2>
+  <p>Penyedia hosting dapat menyimpan log standar: alamat IP, jenis peramban, waktu kunjungan, dan halaman yang diminta. Log dipakai untuk menjaga situs, bukan untuk iklan.</p>
+  <h2>Cookie</h2>
+  <p>notive.id dapat menyimpan cookie untuk Cloudflare Turnstile pada formulir daftar, dan untuk Amplitude bila analitik situs diaktifkan. Cookie itu tidak dipakai untuk iklan. Anda dapat mematikan cookie di peramban. Jika dimatikan, pendaftaran akun dapat berhenti bekerja.</p>
+  <h2>Iklan</h2>
+  <p>Notive tidak menayangkan iklan pihak ketiga, tidak memakai cookie iklan Google DoubleClick (DART), dan tidak memiliki mitra pemasang iklan.</p>
+  <h2>Pihak ketiga</h2>
+  <p>Kebijakan ini tidak mengatur Google, Cloudflare, Amplitude, atau WhatsApp. Kebijakan mereka: <a href="https://policies.google.com/privacy">Google</a>, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a>, <a href="https://amplitude.com/privacy">Amplitude</a>, <a href="https://www.whatsapp.com/legal/privacy-policy">WhatsApp</a>.</p>
+  <h2>Hak Anda</h2>
+  <p>Anda dapat meminta salinan data, perbaikan, penghapusan, pembatasan atau keberatan atas pemrosesan, dan salinan yang dapat dipindahkan. Notive tidak menjual data pribadi. Kami membalas dalam satu bulan lewat WhatsApp dan tidak memungut biaya untuk salinan data.</p>
+  <h2>Yang tidak dilakukan</h2>
+  <p>Notive tidak menjual data kantor dan tidak menayangkan iklan di dalam produk. Data satu kantor tidak dibuka untuk kantor lain. Situs notive.id dapat merekam kunjungan dan interaksi halaman melalui Amplitude, termasuk rekaman sesi, bila analitik situs diaktifkan. Data itu dipakai untuk memahami penggunaan situs, bukan untuk iklan.</p>
+  <h2>Menghapus data</h2>
+  <p>Untuk menghapus data akun, order, atau percakapan di dashboard, kirim permintaan lewat WhatsApp. Dari tab Setting di add-on, Keluar dari Notive menghapus data login dan Kembalikan default menghapus pengaturan. Untuk mencabut izin Google, buka <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</p>
+  <h2>Kontak</h2>
+  <p><a href="https://wa.me/6281384323745">WhatsApp +62 813-8432-3745</a></p>
+  <p><a href="https://notive.id/">https://notive.id/</a></p>
+  <h2>Privacy policy</h2>
+  <p>This policy covers Notive as a whole: order tracking, Nora, office Google Drive (My Drive or Shared Drive), office reports, notive.id, the dashboard, and the Format Berkas add-on. Files stay in the office Drive and pass through Notive only for processing you request. In dashboard chat, Nora only reads and explains. The add-on reads only the open Google Doc (documents.currentonly). Sign-in for the add-on uses script.external_request, and the password is not stored. Deed content in that open Google Doc is never sent to Notive. Revoke Google access at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</p>
+</article>`
+
+let privacyHtml = builtIndex
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>\s*/g, '')
+  .replace(/<title>[^<]*<\/title>/, `<title>${privacyTitle}</title>`)
+  .replace(/<meta name="description" content="[^"]*"\s*\/?>/, `<meta name="description" content="${privacyDescription}" />`)
+  .replace(/<link rel="canonical" href="[^"]*"\s*\/?>/, `<link rel="canonical" href="${privacyCanonical}" />`)
+  .replace(/<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${privacyTitle}" />`)
+  .replace(/<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${privacyDescription}" />`)
+  .replace(/<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${privacyCanonical}" />`)
+privacyHtml = replaceRoot(privacyHtml, privacyArticle)
+fs.mkdirSync(path.join(dist, 'privacy'), { recursive: true })
+fs.writeFileSync(path.join(dist, 'privacy/index.html'), privacyHtml)
+console.log('wrote', '/privacy')
+
 const sitemapDate = new Date().toISOString().slice(0, 10)
 const sitemapUrls = Object.entries(facts.PAGES)
   .filter(([route]) => route !== '/kebijakan-privasi/')

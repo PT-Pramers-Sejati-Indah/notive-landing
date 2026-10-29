@@ -124,6 +124,19 @@ for (const loc of [
 need(!sitemap.includes('https://notive.id/register'), 'sitemap must not list /register')
 need(!sitemap.includes('kebijakan-privasi'), 'sitemap must not list privacy until legal review')
 
+const privacyPage = fs.existsSync(path.join(dist, 'privacy/index.html')) ? read('privacy/index.html') : ''
+need(Boolean(privacyPage), 'missing dist/privacy/index.html')
+need(title(privacyPage) === 'Kebijakan Privasi Notive', 'privacy title mismatch')
+need(canonical(privacyPage) === 'https://notive.id/privacy', `privacy canonical got ${canonical(privacyPage)}`)
+need(/documents\.currentonly/.test(privacyPage), 'privacy page must name documents.currentonly')
+need(/script\.external_request/.test(privacyPage), 'privacy page must name script.external_request')
+need(/tidak pernah dikirim ke Notive/i.test(privacyPage), 'privacy page must say add-on deed content is not sent')
+need(/My Drive atau Shared Drive/.test(privacyPage), 'privacy page must cover both Drive types')
+need(/Nora hanya membaca/.test(privacyPage), 'privacy page must cover Nora')
+need(/pelacakan order/i.test(privacyPage), 'privacy page must cover order tracking')
+need(!/noindex/i.test(privacyPage), 'addon privacy page must stay public for Marketplace review')
+need(!privacyPage.includes('application/ld+json'), 'privacy page must not reuse homepage JSON-LD')
+
 if (failures.length) {
   console.error(failures.map((f) => `FAIL: ${f}`).join('\n'))
   process.exit(1)

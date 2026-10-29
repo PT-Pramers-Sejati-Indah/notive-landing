@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, type SVGProps } from 'react'
 import './App.css'
 import { Calculator } from './Calculator'
+import { Privacy } from './Privacy'
 import { Register } from './Register'
 import { DRIVE_FACT, HERO_SUB, PAGES } from './seo/facts'
 import dashboardPreview from './assets/dashboard-preview.webp'
@@ -56,23 +57,25 @@ const IconSend = (p: IconProps) => <svg {...I(p)}><line x1="22" y1="2" x2="11" y
    Section components
 ============================================================ */
 
-function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }) {
+function Nav({ open, setOpen, atHome }: { open: boolean; setOpen: (v: boolean) => void; atHome: boolean }) {
+  const section = (hash: string) => (atHome ? hash : `/${hash}`)
   return (
     <nav aria-label="Navigasi utama">
       <div className="nav-inner">
-      <a className="nav-brand" href="#top">
+      <a className="nav-brand" href={atHome ? '#top' : '/'} onClick={() => setOpen(false)}>
         <img className="brand-logo" src={notiveLogo} width={34} height={34} alt="" aria-hidden="true" />
         <span className="nav-brand-name">Notive</span>
       </a>
       <ul className="nav-links" role="menubar">
-        <li role="none"><a role="menuitem" href="#nora">Nora</a></li>
-        <li role="none"><a role="menuitem" href="#features">Fitur</a></li>
-        <li role="none"><a role="menuitem" href="#kalkulator">Kalkulator</a></li>
-        <li role="none"><a role="menuitem" href="#how">Cara Kerja</a></li>
-        <li role="none"><a role="menuitem" href="#pricing">Harga</a></li>
-        <li role="none"><a role="menuitem" href="#faq">FAQ</a></li>
+        <li role="none"><a role="menuitem" href={section('#nora')}>Nora</a></li>
+        <li role="none"><a role="menuitem" href={section('#features')}>Fitur</a></li>
+        <li role="none"><a role="menuitem" href={section('#kalkulator')}>Kalkulator</a></li>
+        <li role="none"><a role="menuitem" href={section('#how')}>Cara Kerja</a></li>
+        <li role="none"><a role="menuitem" href={section('#pricing')}>Harga</a></li>
+        <li role="none"><a role="menuitem" href={section('#faq')}>FAQ</a></li>
       </ul>
       <div className="nav-right">
+        <a href="/privacy" className="nav-privacy" aria-current={atHome ? undefined : 'page'}>Privasi</a>
         <a href="https://dashboard.notive.id/login" className="btn-outline">Masuk</a>
         <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-cta">Coba 14 hari gratis</a>
       </div>
@@ -88,12 +91,13 @@ function Nav({ open, setOpen }: { open: boolean; setOpen: (v: boolean) => void }
       </div>
 
       <div id="mobile-menu" className={`mobile-menu ${open ? 'open' : ''}`} role="dialog" aria-modal="true" aria-label="Menu navigasi">
-        <a href="#nora" onClick={() => setOpen(false)}>Nora</a>
-        <a href="#features" onClick={() => setOpen(false)}>Fitur</a>
-        <a href="#kalkulator" onClick={() => setOpen(false)}>Kalkulator</a>
-        <a href="#how" onClick={() => setOpen(false)}>Cara Kerja</a>
-        <a href="#pricing" onClick={() => setOpen(false)}>Harga</a>
-        <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
+        <a href={section('#nora')} onClick={() => setOpen(false)}>Nora</a>
+        <a href={section('#features')} onClick={() => setOpen(false)}>Fitur</a>
+        <a href={section('#kalkulator')} onClick={() => setOpen(false)}>Kalkulator</a>
+        <a href={section('#how')} onClick={() => setOpen(false)}>Cara Kerja</a>
+        <a href={section('#pricing')} onClick={() => setOpen(false)}>Harga</a>
+        <a href={section('#faq')} onClick={() => setOpen(false)}>FAQ</a>
+        <a href="/privacy" onClick={() => setOpen(false)} aria-current={atHome ? undefined : 'page'}>Privasi</a>
         <div className="mobile-menu-actions">
           <a href="https://dashboard.notive.id/login" className="btn-outline" onClick={() => setOpen(false)}>Masuk</a>
           <a href="/register" target="_blank" rel="noopener noreferrer" className="btn-cta" onClick={() => setOpen(false)}>Coba 14 hari gratis</a>
@@ -1046,7 +1050,7 @@ function Footer() {
             <div className="footer-col-title">Keamanan</div>
             <a href="#faq">Data terpisah per kantor</a>
             <a href="#faq">Login aman</a>
-            <a href="/kebijakan-privasi/">Kebijakan privasi</a>
+            <a href="/privacy">Kebijakan privasi</a>
           </div>
           <div className="footer-col">
             <div className="footer-col-title">Perusahaan</div>
@@ -1102,7 +1106,7 @@ function App() {
       if (url.origin !== window.location.origin) return
 
       const pathname = normalizePathname(url.pathname)
-      if (pathname !== '/register' && pathname !== '/') return
+      if (pathname !== '/register' && pathname !== '/' && pathname !== '/privacy') return
       // Already on this path: leave hashes such as /#kalkulator to the browser.
       if (pathname === normalizePathname(window.location.pathname)) return
 
@@ -1120,7 +1124,7 @@ function App() {
   }, [])
 
   useLayoutEffect(() => {
-    if (currentPath !== '/') return
+    if (currentPath !== '/' && currentPath !== '/privacy') return
     const { hash } = window.location
     if (!hash) return
     try {
@@ -1190,11 +1194,40 @@ function App() {
   }, [currentPath])
 
   useEffect(() => {
+    setMobileOpen(false)
+  }, [currentPath])
+
+  useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
   }, [mobileOpen])
+
+  useEffect(() => {
+    const description = document.querySelector('meta[name="description"]')
+    const canonical = document.querySelector('link[rel="canonical"]')
+    const ogTitle = document.querySelector('meta[property="og:title"]')
+    const ogDescription = document.querySelector('meta[property="og:description"]')
+    const ogUrl = document.querySelector('meta[property="og:url"]')
+    if (currentPath === '/privacy') {
+      document.title = 'Kebijakan Privasi Notive'
+      description?.setAttribute('content', 'Kebijakan privasi Notive: pelacakan order, Nora, Google Drive kantor, laporan kantor, dan add-on Notive Format Berkas.')
+      canonical?.setAttribute('href', 'https://notive.id/privacy')
+      ogTitle?.setAttribute('content', 'Kebijakan Privasi Notive')
+      ogDescription?.setAttribute('content', 'Kebijakan privasi Notive: pelacakan order, Nora, Google Drive kantor, laporan kantor, dan add-on Notive Format Berkas.')
+      ogUrl?.setAttribute('content', 'https://notive.id/privacy')
+      return
+    }
+    if (currentPath === '/') {
+      document.title = 'Notive - Aplikasi Notaris Indonesia'
+      description?.setAttribute('content', 'Notive: aplikasi notaris Indonesia untuk manajemen order kantor. Berkas tetap di Google Drive Anda. Nora membantu dalam Bahasa Indonesia. Uji coba 14 hari.')
+      canonical?.setAttribute('href', 'https://notive.id/')
+      ogTitle?.setAttribute('content', 'Notive - Aplikasi Notaris Indonesia')
+      ogDescription?.setAttribute('content', 'Notive: aplikasi notaris Indonesia untuk manajemen order kantor. Berkas tetap di Google Drive Anda. Nora membantu dalam Bahasa Indonesia. Uji coba 14 hari.')
+      ogUrl?.setAttribute('content', 'https://notive.id/')
+    }
+  }, [currentPath])
 
   if (currentPath === '/register') {
     return (
@@ -1208,10 +1241,22 @@ function App() {
     )
   }
 
+  if (currentPath === '/privacy') {
+    return (
+      <>
+        <a href="#persetujuan" className="skip-link">Lewati ke isi kebijakan</a>
+        <Nav open={mobileOpen} setOpen={setMobileOpen} atHome={false} />
+        <main>
+          <Privacy />
+        </main>
+      </>
+    )
+  }
+
   return (
     <>
       <a href="#features" className="skip-link">Lewati ke konten utama</a>
-      <Nav open={mobileOpen} setOpen={setMobileOpen} />
+      <Nav open={mobileOpen} setOpen={setMobileOpen} atHome />
       <main>
         <Hero />
         <Nora />

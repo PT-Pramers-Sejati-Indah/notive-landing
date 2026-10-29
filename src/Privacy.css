@@ -1,0 +1,249 @@
+.privacy-page {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.privacy-mast {
+  background: var(--brand);
+  color: var(--on-brand);
+}
+
+.privacy-mast-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(36px, 6vw, 76px) 24px clamp(32px, 5vw, 60px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px 40px;
+  align-items: start;
+}
+
+.privacy-mast h1 {
+  color: var(--on-brand);
+  font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+  letter-spacing: -0.03em;
+  max-width: 22ch;
+}
+
+.privacy-title-product {
+  display: block;
+}
+
+.privacy-updated {
+  margin-top: 18px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: oklch(95% 0.015 258);
+}
+
+.privacy-lede {
+  margin-top: 16px;
+  max-width: 62ch;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: oklch(96.5% 0.012 258);
+}
+
+.privacy-lang {
+  display: inline-flex;
+  border: 1px solid oklch(97% 0.01 258 / 0.55);
+  border-radius: var(--r-sm);
+  overflow: hidden;
+}
+
+.privacy-lang button {
+  appearance: none;
+  background: transparent;
+  color: var(--on-brand);
+  border: 0;
+  padding: 9px 14px;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.privacy-lang button + button {
+  border-left: 1px solid oklch(97% 0.01 258 / 0.4);
+}
+
+.privacy-lang button[aria-pressed='true'] {
+  background: var(--on-brand);
+  color: var(--brand-ink);
+}
+
+.privacy-lang button:hover {
+  background: oklch(98% 0.01 258 / 0.14);
+}
+
+.privacy-lang button[aria-pressed='true']:hover {
+  background: var(--on-brand);
+}
+
+.privacy-sheet {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 64px) 24px 88px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 68ch);
+  gap: 28px 72px;
+  align-items: start;
+}
+
+.privacy-rail {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6px;
+}
+
+.privacy-rail a {
+  display: block;
+  padding: 9px 0;
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  font-weight: 500;
+  border-top: 1px solid var(--border);
+}
+
+.privacy-rail a:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.privacy-rail a:hover {
+  color: var(--ink);
+}
+
+.privacy-rail a[aria-current='location'] {
+  color: var(--brand-ink);
+  font-weight: 700;
+}
+
+.privacy-column h2 {
+  font-size: clamp(1.7rem, 2.4vw, 2.15rem);
+  margin: 2.8rem 0 0.9rem;
+  scroll-margin-top: 96px;
+}
+
+.privacy-column section:first-child h2 {
+  margin-top: 0;
+}
+
+.privacy-column h3 {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.011em;
+  line-height: 1.35;
+  margin: 0 0 0.4rem;
+}
+
+.privacy-column p,
+.privacy-column li {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.privacy-column p + p,
+.privacy-column p + ol,
+.privacy-column p + ul {
+  margin-top: 0.75rem;
+}
+
+.privacy-clause + ul {
+  margin-top: 1rem;
+}
+
+.privacy-clause + .privacy-clause {
+  margin-top: 1.35rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border);
+}
+
+.privacy-column ul,
+.privacy-column ol {
+  margin: 0.35rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.privacy-column ul {
+  list-style: disc;
+}
+
+.privacy-column ol {
+  list-style: decimal;
+}
+
+.privacy-column li + li {
+  margin-top: 0.65rem;
+}
+
+.privacy-column a {
+  color: var(--brand-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.privacy-column a:hover {
+  color: var(--brand);
+}
+
+.privacy-contact {
+  margin-top: 0.85rem;
+}
+
+.privacy-end {
+  margin-top: 2.5rem;
+}
+
+.privacy-column section {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 860px) {
+  .privacy-mast h1 {
+    max-width: none;
+  }
+
+  .privacy-mast-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .privacy-sheet {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .privacy-rail {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    padding-top: 0;
+  }
+
+  .privacy-rail a,
+  .privacy-rail a:last-child {
+    border: 0;
+    padding: 6px 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .privacy-mast-inner,
+  .privacy-sheet {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .privacy-lang {
+    width: 100%;
+  }
+
+  .privacy-lang button {
+    flex: 1;
+  }
+}
